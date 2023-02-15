@@ -3,10 +3,11 @@ nav{
     background-color:rgb(28, 150, 54);
     
 }
-.img{
-    display: block;
+div.card__image{
+    display:flex;
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
     
 }
 
@@ -14,15 +15,15 @@ form{
     padding:20px 0px 0px 50px ;
 }
 
-.galeria{
+/* .galeria{
     display: inline;
     width: 300px;
-}
+} */
 
-.card-esp{
+/* .card-esp{
     margin-bottom: 20px;
     
-}
+} */
 
 h1.titulogaleria{
 
@@ -30,9 +31,13 @@ h1.titulogaleria{
     text-align: center;
     
 }
-
+.grid{
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	grid-gap: 20px;
+  margin: 10px;
+}
 .card{
-    
     transition: transform 0.2s ease;
     box-shadow: 0 4px 6px 0 rgba(22, 22, 26, 0.18);
     border-radius: 0;
@@ -41,7 +46,6 @@ h1.titulogaleria{
 
 
 }
-
 .card:hover{
     transform: scale(1.1);
 }
@@ -244,3 +248,4 @@ textarea{
   cursor: pointer;
   color:red;
 }
+/* cartas galeria */
