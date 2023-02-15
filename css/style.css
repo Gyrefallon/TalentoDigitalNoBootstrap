@@ -9,17 +9,12 @@ form{
     padding:20px 0px 0px 50px ;
 }
 
-.galeria{
-    display: inline;
-    width: 300px;
-}
-
 .card-esp{
     margin-bottom: 20px;
     
 }
 
-h1.titulogaleria{
+.h1__title{
 
     padding: 40px 0px 40px 0px;
     text-align: center;
@@ -75,13 +70,13 @@ a{
     color:black;
 }
 
-.imagenproducto{
+.div__img--product{
 
   padding: 40px 10px 20px 10px;
 
 }
 
-.rowespecificaciones{
+.div__specs{
 
     background-color: rgb(246, 244, 244);
     padding: 5px;
@@ -90,25 +85,6 @@ a{
 
 }
 
-.imagens{
-  height: 7rem;
-}
-
-.titulo{
-  margin-bottom: 220px;
-}
-
-.navarimg{
-  width: 45px;
-}
-
-.escondido{
-  background-color: rgba(102, 201, 99, 0.768);
-}
-
-.centrado{
-  text-align: center;
-}
 .derecha{
   text-align: right;
 }
@@ -117,11 +93,6 @@ a{
   color:#f6931f;
   font-weight:bold;
 }
-
-.foterdiv{
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
 
 footer{
   margin-bottom: -350px;
@@ -150,7 +121,7 @@ footer{
     color: grey;
   }
   
-  .clasificacion {
+  .classification {
     direction: rtl;
     unicode-bidi: bidi-override;
   }
@@ -164,7 +135,7 @@ footer{
     color: orange;
   }
 
-form.estrellas{
+form.stars{
 
     padding: 0px;
     margin: 10px;
@@ -174,22 +145,19 @@ form.estrellas{
 
 
 /*Estilos de carro*/
-div #carro{
+div #div__cart{
   background-color: rgb(255, 255, 255);
   box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
 }
-#Resumen{
+#h3__resume{
   color: #f6931f;
   text-align: center;
   padding: 1px 0px 20px 0px;
 
 }
-#Pagar{
+#btn__pay{
 background-color: #f6931f;
 border: 0px;
-}
-#caja{
-    border-radius: 12px;
 }
 
 /*Estilos de carro fin*/
@@ -215,12 +183,12 @@ textarea{
   color: black;
 }
 
-.input-com{
+.input__com{
   height: 25px;
   display: flex;
   flex-direction: column;}
 
-#newcomment{
+#newComment{
   outline: none;
   border: 0;
   width: 100px;
@@ -233,10 +201,10 @@ textarea{
   transition-duration: 200ms;
 }
 
-#newcomment::placeholder{
+#newComment::placeholder{
   color:black;
 }
-#newcomment:focus{
+#newComment:focus{
   border-bottom: 2px solid red;
 }
 

@@ -41,7 +41,7 @@
   </div>
   <!--Termino navbar-->
 
-<h1 class="titulogaleria">Galeria de productos</h1>
+<h1 class="h1__title">Galeria de productos</h1>
 
 <script>
   $( function() {
@@ -61,19 +61,17 @@
   
   </script>
 
-  <div class="container mb-5">
   <div class="row justify-content-end">
-    <div class="col-12">
+    <div>
       <p class="derecha">
         <label for="amount">Rango de precio:</label>
         <input type="text" id="amount" readonly class="rango">
       </p>
     </div>
-    <div class="col-md-3">
+    <div>
       <div id="slider-range"></div>
     </div>
   </div>
- </div>
 
  <div class="container">
     <div class="row">
@@ -179,11 +177,11 @@
 </div>
 <hr>
 </div>
-<h3 class="mb-3 mt-4" id="Resumen">Resumen de compra</h3>
+<h3 class="mb-3 mt-4" id="h3__resume">Resumen de compra</h3>
 <!-- aqui va las cajas del carrito -->
 <div class="row justify-content-center">
   <div class="col-sm-3 mb-3 mb-sm-0">
-    <div id="carro" class="card rounded-2 imagens">
+    <div id="div__cart" class="card rounded-2 ">
       <div class="card-body">
         <h5 class="card-title">N° de productos</h5>
         <span id="count">0</span>
@@ -191,7 +189,7 @@
     </div>
   </div>
   <div class="col-sm-3">
-    <div id="carro" class="card rounded-2 imagens">
+    <div id="div__cart" class="card rounded-2 ">
       <div class="card-body">
         <h5 class="card-title">Valor</h5>
         <div class="row">
@@ -207,7 +205,7 @@
   </div>
 </div>
   <div class="d-grid gap-2 col-6 mx-auto mb-3">
-    <button class="btn btn-primary" id="Pagar" onclick="myFunction()">Pagar</button>
+    <button class="btn btn-primary" id="btn__pay" onclick="myFunction()">Pagar</button>
   </div>
 
 
