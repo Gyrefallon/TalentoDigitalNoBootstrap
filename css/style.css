@@ -127,6 +127,7 @@ footer{
   margin-bottom: -350px;
 }
 
+/*Estilos y sistema de estrellas inicio*/
 #form {
     width: 250px;
     margin: 0 auto;
@@ -168,6 +169,11 @@ form.estrellas{
     padding: 0px;
     margin: 10px;
 }
+/*Estilos y Sistema de estrellas fin*/
+
+
+
+/*Estilos de carro*/
 div #carro{
   background-color: rgb(255, 255, 255);
   box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
@@ -185,6 +191,9 @@ border: 0px;
 #caja{
     border-radius: 12px;
 }
+
+/*Estilos de carro fin*/
+
 body{
     padding-bottom: 220px;
 }
@@ -192,7 +201,10 @@ textarea{
   resize: none;
 }
 
-.comentario{
+
+/*Estilos de comentarios*/
+
+.comment{
   background-color: rgba(255,255,255,0.7) ;
   height: 20px;
   width: 500px;
@@ -208,7 +220,7 @@ textarea{
   display: flex;
   flex-direction: column;}
 
-#nuevocomentario{
+#newcomment{
   outline: none;
   border: 0;
   width: 100px;
@@ -221,10 +233,10 @@ textarea{
   transition-duration: 200ms;
 }
 
-#nuevocometario::placeholder{
+#newcomment::placeholder{
   color:black;
 }
-#nuevocomentario:focus{
+#newcomment:focus{
   border-bottom: 2px solid red;
 }
 
@@ -239,7 +251,7 @@ textarea{
   cursor: pointer;
   color:red;
 }
-
+/*Fin del sistema de comentarios*/
 
 /* Inicio CSS navbar
 Falta implementar BEM*/
