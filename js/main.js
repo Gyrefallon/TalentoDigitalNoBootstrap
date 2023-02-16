@@ -54,4 +54,53 @@ function nComment(){//Función para hacer un sistema local de comentarios (Se re
         }
     }
 }
+
+function validarForm(){
+
+    var verificar = true;
+    var expRegNombre= /^([a-z ñáéíóú]{2,60})$/i;
+	var expRegEmail =  /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,4})+$/;
+
+    var nombre = document.getElementById("nombre");
+    var email = document.getElementById("email");
+    var comentarios = document.getElementById("comentarios");
+
+    if(!nombre.value){
+        alert("El campo nombre es requerido");
+        nombre.focus();
+        verificar=false;
+    }else if(!expRegNombre.exec(nombre.value)){
+        alert("El campo nombre solo acepta letras");
+        nombre.focus();
+        verificar=false;
+    }else if(!email.value){
+        alert("El campo email es requerido");
+        email.focus();
+        verificar=false;
+    }else if(!expRegEmail.exec(email.value)){
+        alert("El campo email no es válido");
+        email.focus();
+        verificar=false;
+    }else if(!comentarios.value){
+        alert("El campo comentario es requerido");
+        comentarios.focus();
+        verificar=false;
+    }if(verificar){
+        alert("Se ha enviado el formulario");
+        }
+}
+
+function limpiarForm(){
+    document.getElementById("contact-frm").reset();
+}
+window.onload=function(){
+    var botonEnviar;
+    botonEnviar = document.getElementById("enviar");
+    botonEnviar.onclick=validarForm, limpiarForm();
+}
+
+
+
+
+
 //All good
