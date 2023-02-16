@@ -17,7 +17,7 @@
           <div class="grid__textblock">
             <h5 class="grid__blocktitle">Organizador oficina</h5>
             <p class="grid__blocktext">Organizador colgante de oficina con 4 contenedores.</p>
-            <button class="grid__btn" data-price="15000" onclick="cartAdd(this)" data-item="1">15.000</button>
+            <button class="grid__btn" data-price="15000" onclick="cartAdd(this)" data-item="1"><span>15.000</span></button>
           </div>
         </div>
         <div class="grid__card">
@@ -27,7 +27,7 @@
             <div class="grid__textblock">
               <h5 class="grid__blocktitle">Lámpara metal colgante</h5>
               <p class="grid__blocktext">Lámpara de láminas de metal con aberturas.</p>
-              <button class="grid__btn" data-price="100000"  onclick="cartAdd(this)" data-item="2">100.000</button>
+              <button class="grid__btn" data-price="100000"  onclick="cartAdd(this)" data-item="2"><span>100.000</span></button>
             </div>
         </div>
         <div class="grid__card">
@@ -36,7 +36,7 @@
               <div class="grid__textblock">
                 <h5 class="grid__blocktitle">Organizador escolar</h5>
                 <p class="grid__blocktext">Organizador transportable para útiles escolares.</p>
-                <button class="grid__btn" data-price="12000" onclick="cartAdd(this)" data-item="3">12.000</button>
+                <button class="grid__btn" data-price="12000" onclick="cartAdd(this)" data-item="3"><span>12.000</span></button>
               </div>
         </div>
         </div>
@@ -47,7 +47,7 @@
             <div class="grid__textblock">
                 <h5 class="grid__blocktitle">Libreta reciclada</h5>
                 <p class="grid__blocktext">Libreta de papel reciclado 100 hojas 12x9 cm con lápiz.</p>
-                <button class="grid__btn" data-price="6000" onclick="cartAdd(this)" data-item="4">6.000</button>
+                <button class="grid__btn" data-price="6000" onclick="cartAdd(this)" data-item="4"><span>6.000</span></button>
               </div>
         </div><div class="grid__card">
             <div class="grid__image">
@@ -56,7 +56,7 @@
             <div class="grid__textblock">
                 <h5 class="grid__blocktitle">Macetero diseños</h5>
                 <p class="grid__blocktext">Macetero diseño infantil, 10 cm de diámetro.</p>
-                <button class="grid__btn" data-price="10000" onclick="cartAdd(this)" data-item="5">10.000</button>
+                <button class="grid__btn" data-price="10000" onclick="cartAdd(this)" data-item="5"><span>10.000</span></button>
               </div>
         </div>
         <div class="grid__card">
@@ -66,7 +66,7 @@
             <div class="grid__textblock">
                 <h5 class="grid__blocktitle">Peineta madera</h5>
                 <p class="grid__blocktext">Peineta ecológica de madera de 15 cm.</p>
-                <button class="grid__btn" data-price="12000" onclick="cartAdd(this)" data-item="6">12.000</button>
+                <button class="grid__btn" data-price="12000" onclick="cartAdd(this)" data-item="6"><span>12.000</span></button>
               </div>
         </div>
         <div class="grid__card">
@@ -76,7 +76,7 @@
             <div class="grid__textblock">
                 <h5 class="grid__blocktitle">Macetero colgante</h5>
                 <p class="grid__blocktext">Macetero de plástico colgante 20x10 cm.</p>
-                <button class="grid__btn" data-price="7000" onclick="cartAdd(this)" data-item="7">7.000</button>
+                <button class="grid__btn" data-price="7000" onclick="cartAdd(this)" data-item="7"><span>7.000</span></button>
               </div>
         </div>
         <div class="grid__card">
@@ -86,20 +86,22 @@
             <div class="grid__textblock">
                 <h5 class="grid__blocktitle">Macetero vidrio</h5>
                 <p class="grid__blocktext">Macetero de vidrio de 37x15 cm de diámetro.</p>
-                <button class="grid__btn" data-price="30000" onclick="cartAdd(this)" data-item="8">30.000</button>
+                <button class="grid__btn" data-price="30000" onclick="cartAdd(this)" data-item="8"><span>30.000</span></button>
               </div>
         </div>
     </section>
             <!-- Fin Galeria flotante de productos -->
+<!-- Caja carrito de compras -->
     <div class="cart">
       <div class="cart__counter">
-        <h2 class="cart__title">N°Articulos</h2><br>
+        <h2 class="cart__title">N°Articulos</h2><br><br>
         <label id="productCount">0</label>
       </div>
       <div class="cart__total">
         <h2 class="cart__title">Total</h2><br>
-        <label id="shoppingTotal">0</label>
+        <p style="display: inline-flex;">$</p><label id="shoppingTotal">0</label>
       </div>
+      <br>
       <button class="cart__pay" onclick="payUp()">Pagar</button>
       <button class="cart__reset" onclick="resetCart()">Limpiar Carrito</button>
     </div>
