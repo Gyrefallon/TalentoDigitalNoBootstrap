@@ -265,6 +265,10 @@ body {
   display: none;
 }
 
+.nav__image{
+  display: none;
+}
+
 @media (max-width:600px) {
   .nav > .nav__btn {
     display: inline-block;
@@ -308,6 +312,15 @@ body {
   .nav > #nav__check:checked ~ .nav__links {
     height: 150px;
     overflow-y: auto;
+  }
+  .nav > .nav__header > .nav__title{
+    display: none;
+  }
+  .nav >.nav__header>.nav__image{
+    display: inline-flex;
+    height: 50px;
+    width: 70px;
+    margin-left: 10px;
   }
 }
 /*Fin del CSS navbar*/
@@ -428,3 +441,4 @@ fieldset {
 }
 
 /*Acaba el form*/
+
