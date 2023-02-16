@@ -399,7 +399,7 @@ fieldset {
   resize: none;
 }
 
-.contact button[type="submit"] {
+.contact button[type="button"] {
   cursor: pointer;
   width: 100%;
   border: none;
