@@ -33,33 +33,40 @@
   </div>
   <!--Termino navbar-->
 
-      <div class="contact">
-        <h2>Envianos tus dudas o consultas aquí!</h2>
-        <form action="" class="">
-          <div class="">
-            <label for="Nombre" class="form-label">Tu nombre</label>
-            <input type="text" class="form-control" id="Nombre" required>
-          </div>
-          <div class="">
-            <label for="Email" class="form-label">Tu E-mail</label>
-            <input type="email" class="form-control" id="Email" required>
-          </div>
-          <div class="">
-            <label for="Comentarios" class="form-label">Tu mensaje</label>
-            <textarea name="" id="Comentarios"  rows="5" class="form-control" required></textarea>
-          </div>
-          <label for="encuesta">¿Que tan fácil es utlizar la página?</label>
-          <div class="">
-            <input type="number" name="encuesta" id="number" placeholder="0" step="1" min="0" max="10" required>
-            <p id="text"></p>
-          </div>
-          <div class="">
-            <button type="submit">Enviar</button>
-          </div>
+  <!--Inicio formulario-->
+
+      <div class="container">
+        <form id="contact" action="" method="">
+          <h3>Envianos tus dudas o consultas aquí!</h3>
+          <h4>Contactanos</h4>
+          <fieldset>
+            <input placeholder="Tu nombre" type="text" tabindex="1" required autofocus>
+          </fieldset>
+          <fieldset>
+            <input placeholder="Tu Email" type="email" tabindex="2" required>
+          </fieldset>
+          <fieldset>
+            <input placeholder="Tu numero de celular (opcional)" type="tel" tabindex="3" required>
+          </fieldset>
+          <fieldset>
+            <textarea placeholder="Deja tu mensaje aqui...." tabindex="5" required></textarea>
+          </fieldset>
+          <fieldset>
+            <label for="encuesta">¿Que tan fácil es utlizar la página?</label>
+            <div class="">
+              <input type="number" name="encuesta" id="number" placeholder="0" step="1" min="0" max="10" required>
+              <p id="text"></p>
+            </div>
+          </fieldset>
+          <fieldset>
+            <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Enviar</button>
+          </fieldset>
         </form>
       </div>
+  <!--Fin form-->
 
-      
+
+
   <!--Cambiar footer-->
 
   <!--Cambiar footer-->
