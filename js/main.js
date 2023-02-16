@@ -55,6 +55,11 @@ function nComment(){//Función para hacer un sistema local de comentarios (Se re
     }
 }
 
+//Funcion del formulario
+function limpiarForm(){
+    document.getElementById("contact-frm").reset();
+}
+
 function validarForm(){
 
     var verificar = true;
@@ -87,16 +92,16 @@ function validarForm(){
         verificar=false;
     }if(verificar){
         alert("Se ha enviado el formulario");
+        limpiarForm();
         }
 }
 
-function limpiarForm(){
-    document.getElementById("contact-frm").reset();
-}
+
 window.onload=function(){
     var botonEnviar;
     botonEnviar = document.getElementById("enviar");
-    botonEnviar.onclick=validarForm, limpiarForm();
+    botonEnviar.onclick= validarForm,limpiarForm()
+
 }
 
 
