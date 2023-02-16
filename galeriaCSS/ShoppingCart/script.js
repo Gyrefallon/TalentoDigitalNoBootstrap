@@ -1,66 +1,50 @@
 productCount=0;
 cartTotal=0;
 shoppingTotal=0;
-// document.querySelector("addPrice").addEventListener("click",shopAdd);
-
-// function shopAdd(){
-//     let price = document.getElementById("addPrice");
-//     let cash = Number(price.value);
-//     cartTotal = cartTotal + cash;
-//     localStorage.shoppingTotal = cartTotal;
-
-
-// }
-
-// function cartAdd(){
-//     // solamente me esta añadiendo 15.000 al valor final, ver problemas con id
-//     if (typeof(Storage) !== "undefined") {
-//         if (localStorage.productCount) {
-//          localStorage.productCount = Number(localStorage.productCount)+1;
-//          let addPrice = document.getElementById("addPrice");
-//          let price = Number(addPrice.value);
-//          localStorage.shoppingTotal = Number(localStorage.shoppingTotal)+price;
-//         } 
-//         else {
-//            localStorage.productCount = 1;
-//            let addPrice = document.getElementById("addPrice");
-//            let price = Number(addPrice.value);
-//            localStorage.shoppingTotal = price;
-//         }
-//         document.getElementById("productCount").innerHTML = localStorage.productCount;
-//         document.getElementById("shoppingTotal").innerHTML = localStorage.shoppingTotal;
-//         }
-//         else {
-//           document.getElementById("productCount").innerHTML = "Oye! tu navegador web no soporta almacenado web :C";
-//           document.getElementById("shoppingTotal").innerHTML = "Oye! tu navegador web no soporta almacenado web :C";
-//         }
-        
-//     }
-// function resetCart(){
-//         if(localStorage.productCount > 0){
-//           localStorage.clear();
-//           document.getElementById("productCount").innerHTML = 0;
-//           document.getElementById("shoppingTotal").innerHTML = 0;
-//         //   window.location.reload(); ya no se necesita refrescar pagina
-//         }
-//         else{
-//           alert("No hay articulos en el carro");
-//         }  
-// }
-// function pressAdd(value){
-//     localStorage.shoppingTotal = Number((localStorage.shoppingTotal)+value);
-//     document.getElementById("shoppingTotal").innerHTML = localStorage.shoppingTotal;
-
-
-
-
-// }
+// funcion de sumar numero de productos y total de carro
 let cartAdd = button => {
-    let cash = Number(button.getAttribute('data-price'));
-    cartTotal = cartTotal + cash;
-    localStorage.shoppingTotal = cartTotal;
-    document.getElementById("shoppingTotal").innerHTML = localStorage.shoppingTotal;
-
-
+    if (typeof(Storage) !== "undefined") {
+        if (localStorage.productCount && localStorage.shoppingTotal) {
+            localStorage.productCount = Number(localStorage.productCount)+1;
+            let cash = Number(button.getAttribute('data-price'));
+            cartTotal = cartTotal + cash;
+            localStorage.shoppingTotal = cartTotal;
+            document.getElementById("shoppingTotal").innerHTML = localStorage.shoppingTotal;
+            document.getElementById("productCount").innerHTML = localStorage.productCount;
+        }
+        // else da un valor inicial al "undefined" de localStorage
+        else{ 
+            localStorage.productCount = 1;
+            let cash = Number(button.getAttribute('data-price'));
+            cartTotal = 0;
+            cartTotal = cartTotal + cash;
+            localStorage.shoppingTotal = cartTotal;
+        }
+        document.getElementById("productCount").innerHTML = localStorage.productCount;
+        document.getElementById("shoppingTotal").innerHTML = localStorage.shoppingTotal;
+        }
 }
-// https://www.dofactory.com/html/button/data
+// funcion de limpiar carro de compra
+function resetCart(){
+    if(localStorage.productCount > 0 || localStorage.shoppingTotal>0){
+      localStorage.clear();
+      document.getElementById("productCount").innerHTML = 0;
+      document.getElementById("shoppingTotal").innerHTML = 0;
+    //   window.location.reload(); ya no se necesita refrescar pagina
+    }
+    else{
+      alert("No hay articulos en el carro");
+    }  
+}
+function payUp(){
+    if(localStorage.productCount > 0 && localStorage.shoppingTotal>0){
+        localStorage.clear();
+        document.getElementById("productCount").innerHTML = 0;
+        document.getElementById("shoppingTotal").innerHTML = 0;
+        alert("Has pagado satisfactoriamente");
+    }
+    else{
+        alert("No hay articulos en su carro")
+    }
+}
+// https://www.dofactory.com/html/button/data explica como obtener valores por medio de "data"
