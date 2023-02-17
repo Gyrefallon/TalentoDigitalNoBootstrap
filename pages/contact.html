@@ -30,8 +30,8 @@
     </div>
     <div class="nav__links">
       <a href="../index.html">Inicio</a>
-      <a href="galeria.html">Galeria</a>
-      <a href="contacto.html">Contacto</a>
+      <a href="gallery.html">Galeria</a>
+      <a href="contact.html">Contacto</a>
     </div>
   </div>
   <!--Termino navbar-->
@@ -42,26 +42,26 @@
         <form class="contact" id="contact-frm" action="" method="">
           <h3>Envianos tus dudas o consultas aquí!</h3>
           <h4>Contactanos</h4>
-          <fieldset>
+          <fieldset class="container__fieldset">
             <input placeholder="Tu nombre" type="text" id="nombre">
           </fieldset>
-          <fieldset>
+          <fieldset class="container__fieldset">
             <input placeholder="Tu Email" type="email" id="email">
           </fieldset>
-          <fieldset>
+          <fieldset class="container__fieldset">
             <input placeholder="Tu numero de celular (opcional)" type="tel">
           </fieldset>
-          <fieldset>
-            <textarea placeholder="Deja tu mensaje aqui...." id="comentarios" tabindex="5" ></textarea>
+          <fieldset class="container__fieldset">
+            <textarea class="container__textarea--none"placeholder="Deja tu mensaje aqui...." id="comentarios" tabindex="5" ></textarea>
           </fieldset>
-          <fieldset>
+          <fieldset class="container__fieldset">
             <label for="encuesta">¿Que tan fácil es utlizar la página?(Opcional)</label>
             <div class="">
               <input type="number" name="encuesta" id="number" placeholder="0" step="1" min="0" max="10">
               <p id="text"></p>
             </div>
           </fieldset>
-          <fieldset>
+          <fieldset class="container__fieldset">
             <button name="submit" type="button" id="enviar" data-submit="...Sending">Enviar</button>
           </fieldset>
         </form>
@@ -70,9 +70,28 @@
 
 
 
-  <!--Cambiar footer-->
-
-  <!--Cambiar footer-->
+<!--Bloque pie de páquina--> 
+<footer class="footer">
+  <!--elemento 1-->
+  <ul class="footer__list">
+    <!--elemento 2-->
+    <li><a class="footer__socials--facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+    <!--elemento 3-->
+    <li><a class="footer__socials" href="#"><i class="fa fa-twitter"></i></a></li>
+    <!--elemento 4-->
+    <li><a class="footer__socials" href="#"><i class="fab fa-google"></i></a></li>
+    <!--elemento 5-->
+    <li><a class="footer__socials" href="#"><i class="fab fa-instagram"></i></i></a></li>
+    <!--elemento 6-->
+    <li><a class="footer__socials" href="#"><i class="fa fa-linkedin"></i></a></li>
+    <!--elemento 7-->
+    <li><a class="footer__socials" href="#"><i class="fab fa-github"></i></i></a></li>
+  </ul>
+    <!--elemento 8-->
+  <div class="footer__bottom">
+    <p>Copyright © <span>2023: </span><a href="#">Cachureando.cl</a></p>
+  </div>
+</footer>
 
       <script src="../js/main.js"></script>
       <script src="https://kit.fontawesome.com/cadd79f153.js" crossorigin="anonymous"></script>

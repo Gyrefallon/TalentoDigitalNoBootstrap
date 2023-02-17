@@ -1,74 +1,10 @@
-.img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-form{
-    padding:20px 0px 0px 50px ;
-}
-
-.card-esp{
-    margin-bottom: 20px;
-}
-
-.h1__title{
-
-    padding: 40px 0px 40px 0px;
-    text-align: center;
-}
-
-.card{
-    transition: transform 0.2s ease;
-    box-shadow: 0 4px 6px 0 rgba(22, 22, 26, 0.18);
-    border-radius: 0;
-    border: 0;
-    margin-bottom: 1.5em;
-}
-
-.card:hover{
-    transform: scale(1.1);
-}
-
-.button {
-    width: 120px; /* set a width so it doesnt change upon hover */
-    height: 40px;
-    border: 0px solid #004B84;
-    background: #f6931f;
-    padding: 3px 21px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    color: #ffffff;
-    font-size: 12px;
-    font-family: Questrial;
-    text-decoration: none;
-    vertical-align: middle;
-    letter-spacing: 2px;
-  }
-  
-  .button:hover span {
-    display:none;
-  }
-  
-  .button:hover:before {
-    content:"Agregar carrito";
-  }
-  
-  .button:hover {
-    background-color: #f6931f;
-  }
-
-a{
-    text-decoration: none;
-    color:black;
-}
-
+/*
 .div__img--product{
 
   padding: 40px 10px 20px 10px;
 
 }
+
 
 .div__specs{
 
@@ -78,18 +14,16 @@ a{
     margin-bottom: 200px;
 
 }
+*/
 
 .right{
   text-align: right;
 }
+
 .range{
   border:0;
   color:#f6931f;
   font-weight:bold;
-}
-
-footer{
-  margin-bottom: -350px;
 }
 
 /*Estilos y sistema de estrellas inicio*/
@@ -136,28 +70,8 @@ form.stars{
 }
 /*Estilos y Sistema de estrellas fin*/
 
-/*Estilos de carro*/
-div #div__cart{
-  background-color: rgb(255, 255, 255);
-  box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
-}
-#h3__resume{
-  color: #f6931f;
-  text-align: center;
-  padding: 1px 0px 20px 0px;
 
-}
-#btn__pay{
-background-color: #f6931f;
-border: 0px;
-}
-
-/*Estilos de carro fin*/
-
-body{
-    padding-bottom: 220px;
-}
-textarea{
+.container__textarea--none{
   resize: none;
 }
 
@@ -212,6 +126,10 @@ textarea{
 }
 /*Fin del sistema de comentarios*/
 
+
+
+
+
 /* Inicio CSS navbar*/
 * {
   box-sizing: border-box;
@@ -227,6 +145,7 @@ body {
   width: 100%;
   background-color: rgb(28, 150, 54);
   position: relative;
+  z-index: 9;
 }
 
 .nav > .nav__header {
@@ -318,7 +237,7 @@ body {
   }
   .nav >.nav__header>.nav__image{
     display: inline-flex;
-    height: 50px;
+    height: 45px;
     width: 70px;
     margin-left: 10px;
   }
@@ -327,6 +246,7 @@ body {
 
 /*Empieza el form*/
 
+/*Se importa la siguiente fuente*/
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
 * {
   margin: 0;
@@ -340,6 +260,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/*Container para el formulario de contacto*/
 .container {
   max-width: 400px;
   width: 100%;
@@ -347,6 +268,7 @@ body {
   position: relative;
 }
 
+/*Se cambia la fuente de la clase, solo a los elementos escritos*/
 .contact input[type="text"],
 .contact input[type="email"],
 .contact input[type="tel"],
@@ -356,12 +278,15 @@ body {
   font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
 }
 
+/*Bloque del formulario de contacto*/
 .contact {
   background:lightgreen;
   padding: 25px;
   margin: 150px 0;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
+
+
 
 .contact h3 {
   display: block;
@@ -377,7 +302,7 @@ body {
   font-weight: 400;
 }
 
-fieldset {
+.container__fieldset{
   border: medium none !important;
   margin: 0 0 10px;
   min-width: 100%;
@@ -442,3 +367,357 @@ fieldset {
 
 /*Acaba el form*/
 
+/*Carousel*/
+
+.carousel__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  color: #fff;
+}
+
+.carousel__paragraph {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  color: #fff;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+}
+
+.carousel {
+  width: 100%;
+}
+
+ul.slides {
+  display: block;
+  position: relative;
+  height: 600px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  list-style: none;
+}
+
+
+.slides * {
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+ul.slides input {
+  display: none;
+}
+
+
+.slide-container {
+  display: block;
+}
+
+.slide-image {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  opacity: 0;
+  transition: all .7s ease-in-out;
+}
+
+.slide-image img {
+  width: auto;
+  min-width: 100%;
+  height: 100%;
+}
+
+.carousel-controls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  font-size: 100px;
+  line-height: 600px;
+  color: #fff;
+}
+
+.carousel-controls label {
+  display: none;
+  position: absolute;
+  padding: 0 20px;
+  opacity: 0;
+  transition: opacity .2s;
+  cursor: pointer;
+}
+
+.slide-image:hover+.carousel-controls label {
+  opacity: 0.5;
+}
+
+.carousel-controls label:hover {
+  opacity: 1;
+}
+
+.carousel-controls .prev-slide {
+  width: 49%;
+  text-align: left;
+  left: 0;
+}
+
+.carousel-controls .next-slide {
+  width: 49%;
+  text-align: right;
+  right: 0;
+}
+
+.carousel-dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  z-index: 999;
+  text-align: center;
+}
+
+.carousel-dots .carousel-dot {
+  display: inline-block;
+  width: 30px;
+  height: 5px;
+  background-color: #fff;
+  opacity: 0.5;
+  margin: 3px;
+}
+
+input:checked+.slide-container .slide-image {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 1s ease-in-out;
+}
+
+input:checked+.slide-container .carousel-controls label {
+  display: block;
+}
+
+input#img-1:checked~.carousel-dots label#img-dot-1,
+input#img-2:checked~.carousel-dots label#img-dot-2,
+input#img-3:checked~.carousel-dots label#img-dot-3,
+input#img-4:checked~.carousel-dots label#img-dot-4,
+input#img-5:checked~.carousel-dots label#img-dot-5,
+input#img-6:checked~.carousel-dots label#img-dot-6 {
+  opacity: 1;
+}
+
+
+input:checked+.slide-container .nav label {
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .slide-image img{
+    width: fit-content;
+  }
+  .carousel-controls .prev-slide{
+    width: 5%;
+  }
+  .carousel-controls .next-slide{
+    width: 5%;
+  }
+  .carousel-controls label{
+    padding: 0 10px;
+    width: 45%;
+  }
+}
+/*Fin Carousel*/
+
+
+
+/*Estilo página de productos*/
+
+/* OJO aqui, no estoy colocando un ".tabla" porque no lo quiero ver en fullscreen  */
+.table__image{
+  display: contents;
+  width: auto;
+  position: absolute;
+  left: 0;
+
+}
+.table__product{
+  width: 38%;
+  height: auto;
+
+}
+.table__comments{
+  font-family: sans-serif;
+  display: block;
+  width: 38%;
+  height: 600px;
+  margin-left: 10px;
+
+}
+.table__description{
+  /* estos tres primeros parametros me permitieron dejar esta barra a la derecha */
+  position: absolute;
+  line-height: 25px;
+  right: 0;
+  top: 0;
+  width: 60% ;
+  height: 100%;
+
+}
+
+.grid__btn {
+  width: 120px; /* set a width so it doesnt change upon hover */
+  height: 40px;
+  border: 0px solid #004B84;
+  background: #f6931f;
+  padding: 3px 21px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 12px;
+  font-family: Questrial;
+  text-decoration: none;
+  vertical-align: middle;
+  letter-spacing: 2px;
+}
+
+.table__row{
+
+  padding: 5px 30px 5px 10px ;
+}
+
+.table{
+  font-family: sans-serif;
+
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+footer {
+  position: relative;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  background: #212529;
+  height: 100px;
+  width: auto;
+  padding: 0px 0px 10px 0px;
+  color: #fff;
+}
+
+
+.footer__list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 35px;
+}
+
+.footer__socials li {
+  margin: 0 10px;
+  align-content: center;
+}
+
+.footer__socials--facebook{
+  border: white solid 1px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 14px 10px 13px;
+  margin: 0 10px;
+}
+
+.footer__socials{
+border: white solid 1px;
+border-radius: 5px;
+text-decoration: none;
+color: #fff;
+align-content: center ;
+padding: 10px 12px 10px 12px;
+margin: 10px;
+}
+
+.socials i {
+
+  font-size: 1.1rem;
+  width: 20px;
+  transition: color 0.4s ease;
+  padding: 0px;
+}
+
+.footer__bottom {
+  background: #000;
+  width: auto;
+  padding: 20px 0px 20px 0px ;
+  text-align: center;
+}
+
+.footer__bottom p {
+  float: center;
+  font-size: 14px;
+  word-spacing: 2px;
+  font-family: sans-serif;
+}
+
+.footer__bottom p a {
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.footer__bottom span {
+  text-transform: uppercase;
+
+}
+@media(max-width: 600px){
+  .table{
+      display: grid;
+      grid-template-columns: auto;
+      gap: 10px;
+  }
+  .table__description{
+      display: inline-block;
+      position: relative;
+      margin: 10px;
+      width: 100%;
+      height: 500px;
+  }
+  .table__comments{
+      font-family: sans-serif;
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      height: 150px;
+      margin-top: 120px;
+
+  }
+  .table__product{
+      width: 100%;
+      height: auto;
+  }
+  .table__image{
+      position: relative;
+      width: 100%;
+  }
+}
+/*Fin página de productos*/
+
+
+.card__link{
+  color:#000;
+  text-decoration: none;
+}
