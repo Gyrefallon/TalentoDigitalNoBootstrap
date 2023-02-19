@@ -6,243 +6,193 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Macetero vidrio</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
+
     <link rel="shortcut icon" href="../../img/icon/logo.png">
-</head>
-<body>
+    <link rel="stylesheet" href= "/D:/Escritorio/pgProd/pagProducto/pestilo.css">
     
+    
+</head>
 
-  <nav class="navbar navbar-expand-lg navb sticky-top" >
-    <div class="container-fluid">
-        <div class="navbar-brand d-sm-block d-md-none">
-            <img class="rounded navarimg" src="../../img/icon/logo.png">
-          </div>
-      <a class="navbar-brand d-none d-sm-none d-md-block" href="../../index.html">Cachureando</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarColor03">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link active" href="../../index.html"><i class="bi bi-house"></i>  Inicio
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../galeria.html"><i class="bi bi-camera"></i>  Galería</a>
-            
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../contacto.html"><i class="bi bi-telephone"></i>  Contacto</a>
-          </li>
-        </ul>
-        <form class="d-flex">
-          <input class="form-control me-sm-2" type="search" placeholder="Search">
-          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-        </form>
+<div class="table">
+<!--Bloque Volver atrás-->
+      <div class="table__back">
+            <!--elemento 1-->
+            <img class="table__arrow" src="D:Escritorio/TalentoDigital2023-Sprint/TalentoDigital2023-main/TalentoDigitalNoBootstrap/img/icon/arrow_back_FILL0_wght400_GRAD0_opsz48.png" alt="arrow">
+            <!--elemento 2-->
+            <p class="table__write">
+                  <!--elemento 3-->
+                  <a class="table__link" href="../galeria.html">Volver atrás</a>
+            </p>
       </div>
-    </div>
-  </nav>
-
-<div class="container-fluid">
-      <div class="row">
-        <div class="col-6">
-          <p class="volver mt-3"><a href="../galeria.html"><i class="bi bi-arrow-left"></i>  Volver atrás</a></p>
-            <div class="imagenproducto mt-3 text-center">
-              <img src="../../img/gallery/bottles.jpg" width="250px" alt="...">
+<!--Bloque Imagen-->     
+            <div class="table__image">
+                  <!--elemento 1-->
+                  <img class="table__product" src="../../img/gallery/bottles.jpg" alt="imagendereferencia">
             </div>
-          <div class="row justify-content-center">
-            <div class="col-9 d-none d-sm-none d-md-block">
-              <div class="Comentarios"></div>
-                    <h6><b>Comentarios</b></h6><hr>
-                    <div class="input-com">
-                      <input type="text" id="nuevocomentario" placeholder="Escribe un comentario.....">
-                      <div>
-                        <button onclick="nComentario()" class="btn btn-outline-success">Comentar</button>
-                      </div>
-                    </div>
-                    <form class="estrellas">
-                      <p class="clasificacion">
-                        <input id="radio1" type="radio" name="estrellas" value="5">
-                        <label for="radio1">★</label>
-                        <input id="radio2" type="radio" name="estrellas" value="4">
-                        <label for="radio2">★</label>
-                        <input id="radio3" type="radio" name="estrellas" value="3">
-                        <label for="radio3">★</label>
-                        <input id="radio4" type="radio" name="estrellas" value="2">
-                        <label for="radio4">★</label>
-                        <input id="radio5" type="radio" name="estrellas" value="1">
-                        <label for="radio5">★</label>
-                      </p>
-                    </form>
-                  <ul id="comentarios">
-                  </ul>
-              </div>
+<!--Bloque Descripción--> 
+            <div class="table__description">
+                  <div class="table__box">
+                              <main class="table__info">
+                                    <!--elemento 1-->
+                                    <h3 class="table__title">Macetero de vidrio</h3>
+                                    <!--elemento 2-->
+                                    <p class="table__bodytext">Producto de fabricación nacional<hr>
+                                    <!--elemento 3-->
+                                    <p class="table__title--sub"><b>Información del producto</b></p>
+                                    <!--elemento 4-->
+                                    <p class="table__bodytext">Macetero de vidrio color verde de 37x15 cm de diámetro para jardín (no incluye plantas).</p>
+                                    <!--elemento 5-->
+                                    <button class="grid__btn" href="#"><span>$30.000</span></button> <hr>
+                                    <!--elemento 6-->
+                                    <p class="table__write">
+                                          <!--elemento 7-->
+                                          <img class="table__icon" src="D:\Escritorio\TalentoDigital2023-Sprint\TalentoDigital2023-main\TalentoDigitalNoBootstrap\img\icon\done_FILL0_wght400_GRAD0_opsz48.png">Stock en tienda<br>
+                                          <!--elemento 8-->
+                                          <img class="table__icon" src="D:\Escritorio\TalentoDigital2023-Sprint\TalentoDigital2023-main\TalentoDigitalNoBootstrap\img\icon\local_shipping_FILL0_wght400_GRAD0_opsz48.png">Despacho a domicilio<hr>
+                                    </p>
+                                    <!--elemento 9-->
+                                    <h3 class="table__title">Especificaciones</h3>
+                                    <table class="table__specs">
+                                          <!--elemento 10-->
+                                          <tr>
+                                                <!--elemento 11-->
+                                                <td class="table__row">Altura</td>
+                                                <!--elemento 12-->
+                                                <td class="table__row">37 cm</td>
+                                          </tr>
+                                          <!--elemento 13-->
+                                          <tr>
+                                                <!--elemento 14-->
+                                                <td class="table__row">Diámetro</td>
+                                                <!--elemento 15-->
+                                                <td class="table__row">12 cm</td>
+                                          </tr>
+                                          <!--elemento 16-->
+                                          <tr>
+                                                <!--elemento 17-->
+                                                <td class="table__row">País de origen</td>
+                                                <!--elemento 18-->
+                                                <td class="table__row">Chile</td>
+                                          </tr>
+                                          <tr>
+                                                <!--elemento 19-->
+                                                <td class="table__row">Material</td>
+                                                <!--elemento 20-->
+                                                <td class="table__row">Vidrio</td>
+                                          </tr>
+                                          <!--elemento 21-->
+                                          <tr>
+                                                <!--elemento 22-->
+                                                <td class="table__row">Tipo</td>
+                                                <!--elemento 23-->
+                                                <td class="table__row">Macetero</td>
+                                          </tr>
+                                          <!--elemento 24-->
+                                          <tr>
+                                                <!--elemento 25-->
+                                                <td class="table__row">Uso</td>
+                                                <!--elemento 26-->
+                                                <td class="table__row">Exterior</td>
+                                          </tr>
+                                          <!--elemento 27-->
+                                          <tr>
+                                                <!--elemento 28-->
+                                                <td class="table__row">Garantía</td>
+                                                <!--elemento 29-->
+                                                <td class="table__row">4 meses</td>
+                                          </tr>
+                                          <!--elemento 30-->
+                                          <tr>
+                                                <!--elemento 31-->
+                                                <td class="table__row">Peso</td>
+                                                <!--elemento 32-->
+                                                <td class="table__row">300gr</td>
+                                          </tr>
+                                          <!--elemento 33-->
+                                          <tr>
+                                                <!--elemento 34-->
+                                                <td class="table__row">Condición del producto</td>
+                                                <!--elemento 35-->
+                                                <td class="table__row">Nuevo</td>
+                                          </tr>
+                                          <!--elemento 36-->
+                                          <tr>
+                                                <!--elemento 37-->
+                                                <td class="table__row">Marca</td>
+                                                <!--elemento 38-->
+                                                <td class="table__row">Cachureando</td>
+                                          </tr>
+                                    </table>
+                              </main>     
+                        </div>
+                  </div>
             </div>
-          </div>
-        <div class="col-4 d-none d-sm-none d-md-block">
-            <h3 class="mt-5">Macetero de vidrio</h3><p>Producto de fabricación nacional<hr>
-            <h12><b>Información del producto</b></h12>
-            <p>Macetero de vidrio color verde de 37x15 cm de diámetro para jardín (no incluye plantas).</p>
-            <button class="button mt-2 mb-4" href="#"><span>$30.000</span></button> <hr>
-            <h12><b><i class="bi bi-check"></i> Stock en tienda <br> <i class="bi bi-truck"></i> Despacho a domicilio</b></h12><hr>
-            <h12 class="especificaciones"><b>Especificaciones</b><br>
-              <div class="rowespecificaciones">
-                <div class="row">
-                    <div class="col-5 ms-3 mt-2 mb-2">Altura</div>
-                    <div class="col-5 mt-2 mb-2">37 cm</div>
-                    <div class="w-100"></div>
-                    <div class="col-5 ms-3 mt-2 mb-2">Diámetro</div>
-                    <div class="col-5 mt-2 mb-2">15 cm</div>
-                  </div>
-                  <div class="row">
-                    <div class="col-5 ms-3 mt-2 mb-2">País de origen</div>
-                    <div class="col-5 mt-2 mb-2">Chile</div>
-                    <div class="w-100"></div>
-                    <div class="col-5 ms-3 mt-2 mb-2">Material</div>
-                    <div class="col-5 mt-2 mb-2">Vidrio</div>
-                  </div>
-                  <div class="row">
-                    <div class="col-5 ms-3 mt-2 mb-2">Tipo</div>
-                    <div class="col-5 mt-2 mb-2">Macetero</div>
-                    <div class="w-100"></div>
-                    <div class="col-5 ms-3 mt-2 mb-2">Uso</div>
-                    <div class="col-5 mt-2 mb-2">Exterior</div>
-                  </div>
-                  <div class="row">
-                    <div class="col-5 ms-3 mt-2 mb-2">Garantía</div>
-                    <div class="col-5 mt-2 mb-2">4 meses</div>
-                    <div class="w-100"></div>
-                    <div class="col-5 ms-3 mt-2 mb-2">Peso</div>
-                    <div class="col-5 mt-2 mb-2">300 gr</div>
-                  </div>
-                  <div class="row">
-                    <div class="col-5 ms-3 mt-2 mb-2">Condición del producto</div>
-                    <div class="col-5 mt-2 mb-2">Nuevo</div>
-                    <div class="w-100"></div>
-                    <div class="col-5 ms-3 mt-2 mb-2">Marca</div>
-                    <div class="col-5 mt-2 mb-2">Cachureando</div>
-                  </div>
-              </div>
-        </div>
-        <div class="col-12 d-block d-sm-block d-md-none ms-1 mr-1">
-          <h3 class="mt-5">Macetero de vidrio</h3><p>Producto fabricación nacional<hr>
-            <h12><b>Información del producto</b></h12>
-            <p>Macetero de vidrio color verde de 37x15 cm de diámetro para jardín (no incluye plantas).</p>
-            <button class="button mt-2 mb-4" href="#"><span>$30.000</span></button> <hr>
-            <h12><b><i class="bi bi-check"></i> Stock en tienda <br> <i class="bi bi-truck"></i> Despacho a domicilio</b></h12><hr>
-            <h12 class="especificaciones"><b>Especificaciones</b><br>
-              <div class="rowespecificaciones">
-                <div class="row">
-                    <div class="col-5 ms-3 mt-2 mb-2">Altura</div>
-                    <div class="col-5 mt-2 mb-2">37 cm</div>
-                    <div class="w-100"></div>
-                    <div class="col-5 ms-3 mt-2 mb-2">Diámetro</div>
-                    <div class="col-5 mt-2 mb-2">15 cm</div>
-                  </div>
-                  <div class="row">
-                    <div class="col-5 ms-3 mt-2 mb-2">País de origen</div>
-                    <div class="col-5 mt-2 mb-2">Chile</div>
-                    <div class="w-100"></div>
-                    <div class="col-5 ms-3 mt-2 mb-2">Material</div>
-                    <div class="col-5 mt-2 mb-2">Vidrio</div>
-                  </div>
-                  <div class="row">
-                    <div class="col-5 ms-3 mt-2 mb-2">Tipo</div>
-                    <div class="col-5 mt-2 mb-2">Macetero</div>
-                    <div class="w-100"></div>
-                    <div class="col-5 ms-3 mt-2 mb-2">Uso</div>
-                    <div class="col-5 mt-2 mb-2">Exterior</div>
-                  </div>
-                  <div class="row">
-                    <div class="col-5 ms-3 mt-2 mb-2">Garantía</div>
-                    <div class="col-5 mt-2 mb-2">4 meses</div>
-                    <div class="w-100"></div>
-                    <div class="col-5 ms-3 mt-2 mb-2">Peso</div>
-                    <div class="col-5 mt-2 mb-2">300 gr</div>
-                  </div>
-                  <div class="row">
-                    <div class="col-5 ms-3 mt-2 mb-2">Condición del producto</div>
-                    <div class="col-5 mt-2 mb-2">Nuevo</div>
-                    <div class="w-100"></div>
-                    <div class="col-5 ms-3 mt-2 mb-2">Marca</div>
-                    <div class="col-5 mt-2 mb-2">Cachureando</div>
-                  </div>
-              </div>
-              <div class="Comentarios"></div>
-              <h6><b>Comentarios</b></h6><hr>
-                <form class="estrellas">
-                  Escribe un comentario...
-                  <p class="clasificacion">
-                    <input id="radio1" type="radio" name="estrellas" value="5">
-                    <label for="radio1">★</label>
-                    <input id="radio2" type="radio" name="estrellas" value="4">
-                    <label for="radio2">★</label>
-                    <input id="radio3" type="radio" name="estrellas" value="3">
-                    <label for="radio3">★</label>
-                    <input id="radio4" type="radio" name="estrellas" value="2">
-                    <label for="radio4">★</label>
-                    <input id="radio5" type="radio" name="estrellas" value="1">
-                    <label for="radio5">★</label>
-                  </p>
-                </form> 
+<!--Bloque tabla de Comentarios--> 
+            <div class="table__comments">
+                  <section class="table__block">
+                        <!--elemento 1-->          
+                        <div class="table__write">
+                              <h3 class="table__title">Comentarios</h3>
+                              <!--elemento 2-->   
+                              <hr> 
+                              <!--elemento 3-->                   
+                              <input class="table__newcomm" type="text" id="nuevocomentario" placeholder="Escribe un comentario.....">
+                              <!--elemento 4-->
+                              <button class="table__send" onclick="nComentario()">Comentar</button>
+                        </div>       
+                        <!--elemento 5-->              
+                              <form class="table__star">
+                                    <!--elemento 6--> 
+                                    <input id="radio1" type="radio" name="estrellas" value="5">
+                                    <!--elemento 7--> 
+                                    <label for="radio1">★</label>
+                                    <!--elemento 8--> 
+                                    <input id="radio2" type="radio" name="estrellas" value="4">
+                                    <!--elemento 9--> 
+                                    <label for="radio2">★</label>
+                                    <!--elemento 10--> 
+                                    <input id="radio3" type="radio" name="estrellas" value="3">
+                                    <!--elemento 11--> 
+                                    <label for="radio3">★</label>
+                                    <!--elemento 12--> 
+                                    <input id="radio4" type="radio" name="estrellas" value="2">
+                                    <!--elemento 13--> 
+                                    <label for="radio4">★</label>
+                                    <!--elemento 14--> 
+                                    <input id="radio5" type="radio" name="estrellas" value="1">
+                                    <!--elemento 15--> 
+                                    <label for="radio5">★</label>
+                              </form>
+                              <ul id="comentarios"></ul>
+                  </section>        
             </div>
-        </div>
-    </div>
-
-<footer class="bg-dark text-center text-white">
-  <!-- Grid container -->
-  <div class="container p-4 pb-0">
-    <!-- Section: Social media -->
-    <section class="mb-4">
-      <!-- Facebook -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-facebook-f"></i
-      ></a>
-
-      <!-- Twitter -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-twitter"></i
-      ></a>
-
-      <!-- Google -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-google"></i
-      ></a>
-
-      <!-- Instagram -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-instagram"></i
-      ></a>
-
-      <!-- Linkedin -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-linkedin-in"></i
-      ></a>
-
-      <!-- Github -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-github"></i
-      ></a>
-    </section>
-    <!-- Section: Social media -->
-  </div>
-  <!-- Grid container -->
-
-  <!-- Copyright -->
-  <div class="text-center p-3 foterimg">
-    © 2023 Copyright:
-    <a class="text-white" href="../index.html">Cachureando.cl</a>
-  </div>
-  <!-- Copyright -->
-</footer>
-<script src="https://kit.fontawesome.com/cadd79f153.js" crossorigin="anonymous"></script>
-<script src="../../js/main.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-
+      </div>
+<!--Bloque pie de páquina--> 
+      <footer class="footer">
+            <!--elemento 1-->
+            <ul class="footer__list">
+              <!--elemento 2-->
+              <li><a class="footer__socials--facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+              <!--elemento 3-->
+              <li><a class="footer__socials" href="#"><i class="fa fa-twitter"></i></a></li>
+              <!--elemento 4-->
+              <li><a class="footer__socials" href="#"><i class="fab fa-google"></i></a></li>
+              <!--elemento 5-->
+              <li><a class="footer__socials" href="#"><i class="fab fa-instagram"></i></i></a></li>
+              <!--elemento 6-->
+              <li><a class="footer__socials" href="#"><i class="fa fa-linkedin"></i></a></li>
+              <!--elemento 7-->
+              <li><a class="footer__socials" href="#"><i class="fab fa-github"></i></i></a></li>
+            </ul>
+              <!--elemento 8-->
+            <div class="footer__bottom">
+              <p>Copyright © <span>2023: </span><a href="#">Cachureando.cl</a></p>
+            </div>
+      </footer>
+      <script src="https://kit.fontawesome.com/cadd79f153.js" crossorigin="anonymous"></script>
+      <script src="../../js/main.js"></script>
 </body>
 </html>
+
+
+
