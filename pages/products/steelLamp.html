@@ -14,7 +14,7 @@
 <body>
   <!--Inicio navbar-->
   <div class="nav">
-    <input type="checkbox" id="nav-check">
+    <input type="checkbox" id="nav-check" class="nav__input--nocheck">
     <div class="nav__header">
       <div class="nav__title">
         Cachureando
@@ -32,15 +32,23 @@
     </div>
     <div class="nav__links">
       <a href="../../index.html">Inicio</a>
-      <a href="../galeria.html">Galeria</a>
-      <a href="../contacto.html">Contacto</a></div>
+      <a href="../gallery.html">Galeria</a>
+      <a href="../contact.html">Contacto</a></div>
   </div>
   <!--Termino navbar-->
 
-<!--Bloque volver--> 
-<p class="back"><a href="../gallery.html">Volver atrás</a></p>
 <!--Bloque Tabla--> 
       <div class="table">
+<!--Bloque Volver atrás-->
+            <div class="table__back">
+            <!--elemento 1-->
+            <img class="table__arrow" src="../../img/icon/arrow_back_FILL0_wght400_GRAD0_opsz48.png" alt="arrow">
+            <!--elemento 2-->
+            <p class="table__write">
+                  <!--elemento 3-->
+                  <a class="table__link" href="../gallery.html">Volver atrás</a>
+            </p>
+      </div>
 <!--Bloque Imagen--> 
             <div class="table__image">
                   <img class="table__product" src="../../img/gallery/decoracion-con-cosas-recicladas-lamparas.jpg" alt="imagendereferencia">
@@ -53,9 +61,13 @@
                                     <p class="table__bodytext">Producto de fabricación nacional<hr>
                                     <p class="table__title--sub"><b>Información del producto</b></p>
                                     <p class="table__bodytext">Lámpara de 4 focos con pantallas de lámina de metal con agujeros, perfecto para el hogar con un toque rústico.</p>
-                                    <button class="grid__btn" href="#"><span>$100.000</span></button> <hr>
-                                    Stock en tienda<br>
-                                    Despacho a domicilio<hr>
+                                    <button class="grid__btn" href="#"><span>$100.000</span></button>
+                                    <p class="table__write">
+                                          <!--elemento 7-->
+                                          <img class="table__icon" src="../../img/icon/done_FILL0_wght400_GRAD0_opsz48.png">Stock en tienda<br>
+                                          <!--elemento 8-->
+                                          <img class="table__icon" src="../../img/icon/local_shipping_FILL0_wght400_GRAD0_opsz48.png">Despacho a domicilio<hr>
+                                    </p>
                                     <h3 class="table__title">Especificaciones</h3>
                                     <table class="table__specs">
                                           <tr>
