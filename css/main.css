@@ -14,6 +14,35 @@ body {
   -o-font-smoothing: antialiased;
   text-rendering: optimizeLegibility; }
 
+.grid__card:hover {
+  transform: scale(1.1); }
+
+/* animaciones de botones de producto */
+.grid__btn:hover {
+  transform: scale(1.2); }
+  .grid__btn:hover span {
+    display: none; }
+  .grid__btn:hover::before {
+    content: "Agregar carrito"; }
+
+.cart__pay:hover, .cart__reset:hover {
+  transform: scale(1.1);
+  background: #1c9636; }
+
+.container__contact input[type="text"]:hover,
+.container__contact input[type="email"]:hover,
+.container__contact input[type="tel"]:hover,
+.container__contact input[type="url"]:hover,
+.container__contact textarea:hover {
+  transition: border-color 0.3s ease-in-out;
+  border: 1px solid rgba(0, 0, 0, 0.5); }
+
+.container__contact button[type="button"]:hover {
+  background: darkgreen;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out; }
+
 /* bloque contadores de carro */
 div.cart {
   text-align: center;
@@ -26,15 +55,15 @@ div.cart {
   width: 40%;
   height: 150px;
   margin: 20px;
-  background-color: white;
+  background-color: #fff;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
   border-radius: 15px;
   display: inline-block;
   vertical-align: top; }
 
 .cart_title {
-  font-family: Questrial;
-  color: #141414; }
+  font-family: "Questrial";
+  color: black; }
 
 /* Estilo de botones de pago y limpiar */
 .cart__pay, .cart__reset {
@@ -46,17 +75,12 @@ div.cart {
   background-color: #f6931f;
   color: #fff;
   font-size: 12px;
-  font-family: Questrial;
+  font-family: "Questrial";
   text-decoration: none;
   vertical-align: middle;
   letter-spacing: 2px;
   border: 0px;
   transition: transform 0.2s ease; }
-
-/* cambio de color por hover */
-.cart__pay:hover, .cart__reset:hover {
-  transform: scale(1.1);
-  background: #1f9a1f; }
 
 /* estilo botones de producto */
 .grid__btn {
@@ -68,22 +92,12 @@ div.cart {
   background-color: #f6931f;
   color: #fff;
   font-size: 12px;
-  font-family: Questrial;
+  font-family: "Questrial";
   text-decoration: none;
   vertical-align: middle;
   letter-spacing: 2px;
   border: 0px;
   transition: transform 0.2s ease; }
-
-/* animaciones de botones de propucto */
-.grid__btn:hover {
-  transform: scale(1.2); }
-
-.grid__btn:hover span {
-  display: none; }
-
-.grid__btn:hover:before {
-  content: "Agregar carrito"; }
 
 /*Container para el formulario de contacto*/
 .container {
@@ -99,14 +113,14 @@ div.cart {
 .container__contact input[type="url"],
 .container__contact textarea,
 .container__contact button[type="submit"] {
-  font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif; }
+  font: 400 12px/16px "sans-serif"; }
 
 /*Bloque del formulario de contacto*/
 .container__contact {
   background: lightgreen;
   padding: 25px;
   margin: 150px 0;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); }
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.2); }
 
 .container__contact h3 {
   display: block;
@@ -133,18 +147,10 @@ div.cart {
 .container__contact input[type="url"],
 .container__contact textarea {
   width: 100%;
-  border: 1px solid #ccc;
-  background: #FFF;
+  border: 1px solid #aaa;
+  background: #fff;
   margin: 0 0 5px;
   padding: 10px; }
-
-.container__contact input[type="text"]:hover,
-.container__contact input[type="email"]:hover,
-.container__contact input[type="tel"]:hover,
-.container__contact input[type="url"]:hover,
-.container__contact textarea:hover {
-  transition: border-color 0.3s ease-in-out;
-  border: 1px solid #aaa; }
 
 .container__contact textarea {
   height: 100px;
@@ -155,17 +161,11 @@ div.cart {
   cursor: pointer;
   width: 100%;
   border: none;
-  background: #4CAF50;
-  color: #FFF;
+  background: #1c9636;
+  color: #fff;
   margin: 0 0 5px;
   padding: 10px;
   font-size: 15px; }
-
-.container__contact button[type="submit"]:hover {
-  background: #43A047;
-  -webkit-transition: background 0.3s ease-in-out;
-  -moz-transition: background 0.3s ease-in-out;
-  transition: background-color 0.3s ease-in-out; }
 
 .container__contact button[type="submit"]:active {
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5); }
@@ -199,11 +199,8 @@ div.cart {
   width: 300ppx; }
 
 /* animacion */
-.grid__card:hover {
-  transform: scale(1.1); }
-
 /* acomodacion de imagen */
-div.grid__image {
+.grid__image {
   width: 100%;
   object-fit: cover; }
 
@@ -222,7 +219,7 @@ div.grid__image {
   .grid {
     grid-template-columns: repeat(2, 1fr); } }
 .card__link {
-  color: #000;
+  color: black;
   text-decoration: none; }
 
 footer {
@@ -248,7 +245,7 @@ footer {
   align-content: center; }
 
 .footer__socials--facebook {
-  border: white solid 1px;
+  border: #fff solid 1px;
   border-radius: 5px;
   text-decoration: none;
   color: #fff;
@@ -256,7 +253,7 @@ footer {
   margin: 0 10px; }
 
 .footer__socials {
-  border: white solid 1px;
+  border: #fff solid 1px;
   border-radius: 5px;
   text-decoration: none;
   color: #fff;
@@ -271,7 +268,7 @@ footer {
   padding: 0px; }
 
 .footer__bottom {
-  background: #000;
+  background: black;
   width: auto;
   padding: 20px 0px 20px 0px;
   text-align: center; }
@@ -280,10 +277,10 @@ footer {
   float: center;
   font-size: 14px;
   word-spacing: 2px;
-  font-family: sans-serif; }
+  font-family: "sans-serif"; }
 
 .footer__bottom p a {
-  color: #ffffff;
+  color: #fff;
   font-size: 16px;
   text-decoration: none; }
 

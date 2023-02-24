@@ -3,11 +3,11 @@ footer {
     bottom: 0px;
     left: 0;
     right: 0;
-    background: #212529;
+    background: $colorFooter;
     height: 100px;
     width: auto;
     padding: 0px 0px 10px 0px;
-    color: #fff;
+    color: $colorWhite
   }
   
   
@@ -25,19 +25,19 @@ footer {
   }
   
   .footer__socials--facebook{
-    border: white solid 1px;
+    border: $colorWhite solid 1px;
     border-radius: 5px;
     text-decoration: none;
-    color: #fff;
+    color: $colorWhite;
     padding: 10px 14px 10px 13px;
     margin: 0 10px;
   }
   
   .footer__socials{
-  border: white solid 1px;
+  border: $colorWhite solid 1px;
   border-radius: 5px;
   text-decoration: none;
-  color: #fff;
+  color: $colorWhite;
   align-content: center ;
   padding: 10px 12px 10px 12px;
   margin: 10px;
@@ -51,8 +51,10 @@ footer {
     padding: 0px;
   }
   
+
+//Anidar
   .footer__bottom {
-    background: #000;
+    background: $colorBlack;
     width: auto;
     padding: 20px 0px 20px 0px ;
     text-align: center;
@@ -62,11 +64,11 @@ footer {
     float: center;
     font-size: 14px;
     word-spacing: 2px;
-    font-family: sans-serif;
+    font-family: $fontSerif;
   }
   
   .footer__bottom p a {
-    color: #ffffff;
+    color: $colorWhite;
     font-size: 16px;
     text-decoration: none;
   }
@@ -75,3 +77,5 @@ footer {
     text-transform: uppercase;
     
   }
+
+//anidacion final

@@ -22,11 +22,9 @@
     width: 300ppx
 }
 /* animacion */
-.grid__card:hover{
-    transform: scale(1.1);
-}
+
 /* acomodacion de imagen */
-div.grid__image{
+.grid__image{
     width: 100%;
     object-fit: cover;
     
@@ -48,6 +46,6 @@ div.grid__image{
     
 }
 .card__link{
-    color:#000;
+    color:$colorBlack;
     text-decoration: none;
   }

@@ -5,24 +5,13 @@
     width: 120px; 
     height: 40px;
     border-radius: 10px;
-    background-color: #f6931f;
-    color: #fff;
+    background-color: $colorOrange;
+    color: $colorWhite;
     font-size: 12px;
-    font-family: Questrial;
+    font-family: $fontQuestrial;
     text-decoration: none;
     vertical-align: middle;
     letter-spacing: 2px;
     border: 0px;
     transition: transform 0.2s ease;
 }
-/* animaciones de botones de propucto */
-.grid__btn:hover{
-    transform: scale(1.2);
-
-}.grid__btn:hover span {
-    display:none
-  }
-  
-  .grid__btn:hover:before {
-    content:"Agregar carrito";
-  }

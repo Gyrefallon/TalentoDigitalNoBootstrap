@@ -10,15 +10,15 @@ div.cart{
     width: 40%;
     height: 150px;
     margin: 20px;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
+    background-color: $colorWhite;
+    box-shadow: 5px 5px 5px $colorShadow;
     border-radius: 15px;
     display: inline-block;
     vertical-align: top;
 }
 .cart_title{
-    font-family: Questrial;
-    color: rgb(20, 20, 20);
+    font-family: $fontQuestrial;
+    color:$colorBlack;
 }
 
 /* Estilo de botones de pago y limpiar */
@@ -28,18 +28,13 @@ div.cart{
     width: 120px; 
     height: 40px;
     border-radius: 10px;
-    background-color: #f6931f;
-    color: #fff;
+    background-color: $colorOrange;
+    color: $colorWhite;
     font-size: 12px;
-    font-family: Questrial;
+    font-family: $fontQuestrial;
     text-decoration: none;
     vertical-align: middle;
     letter-spacing: 2px;
     border: 0px;
     transition: transform 0.2s ease;
-}
-/* cambio de color por hover */
-.cart__pay:hover,.cart__reset:hover{
-    transform: scale(1.1);
-    background: rgb(31, 154, 31);
 }
