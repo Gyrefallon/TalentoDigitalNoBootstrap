@@ -22,20 +22,22 @@
 
 
 
-//Formulario animaciones
-.container__contact input[type="text"]:hover,
-.container__contact input[type="email"]:hover,
-.container__contact input[type="tel"]:hover,
-.container__contact input[type="url"]:hover,
-.container__contact textarea:hover {
-  transition: border-color 0.3s ease-in-out;
-  border: 1px solid $colorDShadow;
-}
+.container__contact{
 
-.container__contact button[type="button"]:hover {
-    background: $colorDgreen;
-    -webkit-transition: background 0.3s ease-in-out;
-    -moz-transition: background 0.3s ease-in-out;
-    transition: background-color 0.3s ease-in-out;
-  }
-  
+    input[type="text"]:hover,
+    input[type="email"]:hover,
+    input[type="tel"]:hover,
+    input[type="url"]:hover,
+    textarea:hover {
+    transition: border-color 0.3s ease-in-out;
+    border: 1px solid $colorDShadow;
+    }
+
+    button[type="button"]:hover {
+        background: $colorDgreen;
+        -webkit-transition: background 0.3s ease-in-out;
+        -moz-transition: background 0.3s ease-in-out;
+        transition: background-color 0.3s ease-in-out;
+      }
+}
+//Formulario animaciones

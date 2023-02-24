@@ -36,7 +36,6 @@ body {
 .container__contact textarea:hover {
   transition: border-color 0.3s ease-in-out;
   border: 1px solid rgba(0, 0, 0, 0.5); }
-
 .container__contact button[type="button"]:hover {
   background: darkgreen;
   -webkit-transition: background 0.3s ease-in-out;
@@ -44,7 +43,7 @@ body {
   transition: background-color 0.3s ease-in-out; }
 
 /* bloque contadores de carro */
-div.cart {
+.cart {
   text-align: center;
   width: 80%;
   margin: auto; }
@@ -62,7 +61,7 @@ div.cart {
   vertical-align: top; }
 
 .cart_title {
-  font-family: "Questrial";
+  font-family: Questrial;
   color: black; }
 
 /* Estilo de botones de pago y limpiar */
@@ -75,7 +74,7 @@ div.cart {
   background-color: #f6931f;
   color: #fff;
   font-size: 12px;
-  font-family: "Questrial";
+  font-family: Questrial;
   text-decoration: none;
   vertical-align: middle;
   letter-spacing: 2px;
@@ -92,7 +91,7 @@ div.cart {
   background-color: #f6931f;
   color: #fff;
   font-size: 12px;
-  font-family: "Questrial";
+  font-family: Questrial;
   text-decoration: none;
   vertical-align: middle;
   letter-spacing: 2px;
@@ -106,33 +105,61 @@ div.cart {
   margin: 0 auto;
   position: relative; }
 
-/*Se cambia la fuente de la clase, solo a los elementos escritos*/
-.container__contact input[type="text"],
-.container__contact input[type="email"],
-.container__contact input[type="tel"],
-.container__contact input[type="url"],
-.container__contact textarea,
-.container__contact button[type="submit"] {
-  font: 400 12px/16px "sans-serif"; }
-
 /*Bloque del formulario de contacto*/
 .container__contact {
   background: lightgreen;
   padding: 25px;
   margin: 150px 0;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.2); }
-
-.container__contact h3 {
-  display: block;
-  font-size: 30px;
-  font-weight: 300;
-  margin-bottom: 10px; }
-
-.container__contact h4 {
-  margin: 5px 0 15px;
-  display: block;
-  font-size: 13px;
-  font-weight: 400; }
+  .container__contact input[type="text"],
+  .container__contact input[type="email"],
+  .container__contact input[type="tel"],
+  .container__contact input[type="url"],
+  .container__contact textarea,
+  .container__contact button[type="button"] {
+    font: 400 12px/16px sans-serif; }
+  .container__contact h3 {
+    display: block;
+    font-size: 30px;
+    font-weight: 300;
+    margin-bottom: 10px; }
+  .container__contact h4 {
+    margin: 5px 0 15px;
+    display: block;
+    font-size: 13px;
+    font-weight: 400; }
+  .container__contact input[type="text"],
+  .container__contact input[type="email"],
+  .container__contact input[type="tel"],
+  .container__contact input[type="url"],
+  .container__contact textarea {
+    width: 100%;
+    border: 1px solid #aaa;
+    background: #fff;
+    margin: 0 0 5px;
+    padding: 10px; }
+    .container__contact input[type="text"]:focus,
+    .container__contact input[type="email"]:focus,
+    .container__contact input[type="tel"]:focus,
+    .container__contact input[type="url"]:focus,
+    .container__contact textarea:focus {
+      outline: 0;
+      border: 1px solid #aaa; }
+  .container__contact textarea {
+    height: 100px;
+    max-width: 100%;
+    resize: none; }
+  .container__contact button[type="button"] {
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    background: #1c9636;
+    color: #fff;
+    margin: 0 0 5px;
+    padding: 10px;
+    font-size: 15px; }
+    .container__contact button[type="button"]:active {
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5); }
 
 .container__fieldset {
   border: medium none !important;
@@ -140,40 +167,6 @@ div.cart {
   min-width: 100%;
   padding: 0;
   width: 100%; }
-
-.container__contact input[type="text"],
-.container__contact input[type="email"],
-.container__contact input[type="tel"],
-.container__contact input[type="url"],
-.container__contact textarea {
-  width: 100%;
-  border: 1px solid #aaa;
-  background: #fff;
-  margin: 0 0 5px;
-  padding: 10px; }
-
-.container__contact textarea {
-  height: 100px;
-  max-width: 100%;
-  resize: none; }
-
-.container__contact button[type="button"] {
-  cursor: pointer;
-  width: 100%;
-  border: none;
-  background: #1c9636;
-  color: #fff;
-  margin: 0 0 5px;
-  padding: 10px;
-  font-size: 15px; }
-
-.container__contact button[type="submit"]:active {
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5); }
-
-.container__contact input:focus,
-.container__contact textarea:focus {
-  outline: 0;
-  border: 1px solid #aaa; }
 
 /* establecer tabla de prodcutos (grid) */
 .grid {
@@ -240,18 +233,6 @@ footer {
   justify-content: center;
   padding: 35px; }
 
-.footer__socials li {
-  margin: 0 10px;
-  align-content: center; }
-
-.footer__socials--facebook {
-  border: #fff solid 1px;
-  border-radius: 5px;
-  text-decoration: none;
-  color: #fff;
-  padding: 10px 14px 10px 13px;
-  margin: 0 10px; }
-
 .footer__socials {
   border: #fff solid 1px;
   border-radius: 5px;
@@ -260,6 +241,17 @@ footer {
   align-content: center;
   padding: 10px 12px 10px 12px;
   margin: 10px; }
+  .footer__socials li {
+    margin: 0 10px;
+    align-content: center; }
+
+.footer__socials--facebook {
+  border: #fff solid 1px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 14px 10px 13px;
+  margin: 0 10px; }
 
 .socials i {
   font-size: 1.1rem;
@@ -272,20 +264,17 @@ footer {
   width: auto;
   padding: 20px 0px 20px 0px;
   text-align: center; }
-
-.footer__bottom p {
-  float: center;
-  font-size: 14px;
-  word-spacing: 2px;
-  font-family: "sans-serif"; }
-
-.footer__bottom p a {
-  color: #fff;
-  font-size: 16px;
-  text-decoration: none; }
-
-.footer__bottom span {
-  text-transform: uppercase; }
+  .footer__bottom p {
+    float: center;
+    font-size: 14px;
+    word-spacing: 2px;
+    font-family: sans-serif; }
+    .footer__bottom p a {
+      color: #fff;
+      font-size: 16px;
+      text-decoration: none; }
+  .footer__bottom span {
+    text-transform: uppercase; }
 
 .nav__input--nocheck {
   display: none; }
