@@ -1,0 +1,28 @@
+/* estilo botones de producto */
+.grid__btn{
+    margin: 20px;
+    padding: 3px 21px;
+    width: 120px; 
+    height: 40px;
+    border-radius: 10px;
+    background-color: #f6931f;
+    color: #fff;
+    font-size: 12px;
+    font-family: Questrial;
+    text-decoration: none;
+    vertical-align: middle;
+    letter-spacing: 2px;
+    border: 0px;
+    transition: transform 0.2s ease;
+}
+/* animaciones de botones de propucto */
+.grid__btn:hover{
+    transform: scale(1.2);
+
+}.grid__btn:hover span {
+    display:none
+  }
+  
+  .grid__btn:hover:before {
+    content:"Agregar carrito";
+  }
