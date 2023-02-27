@@ -5,106 +5,81 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cachureando</title>
-    <!-- <link rel="stylesheet" href="./css/style.css"> -->
-    <link rel="shortcut icon" href="img/icon/logo.png">
     <link rel="stylesheet" href="./css/main.css">
-
-  </head>
-  <body>
+    <link rel="shortcut icon" href="img/icon/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <body>
 
     <!--NavBar -->
-    <div class="nav">
-        <input type="checkbox" id="nav__check">
-        <div class="nav__header">
-        <div class="nav__title">
-            Cachureando
-        </div>
-        <div class="nav__image">
-          <img src="../img/icon/logo.png" alt="">
-        </div>
-      </div>
-      <div class="nav__btn">
-        <label for="nav__check">
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-      </div>
-      <div class="nav__links">
-        <a href="index.html">Inicio</a>
-        <a href="pages/gallery.html">Galeria</a>
-        <a href="pages/contact.html">Contacto</a>
-      </div>
-    </div>
+    <div class="w-100">
+      <nav class="navbar navbar-expand sticky-top nav__color" >
+          <div class="container-fluid">
+            <div class="navbar-brand d-sm-block d-md-none">
+                  <img class="rounded navarimg" width="30px" src="../TalentoDigitalNoBootstrap-navbar/img/icon/logo.png">
+                </div>
+                <a class="navbar-brand d-none d-sm-none d-md-block" href="index.html">Cachureando</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor03">
+              <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                  <a class="nav-link active" href="index.html"><i class="bi bi-house"></i>  Inicio
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="pages/gallery.html"><i class="bi bi-camera"></i>  Galería</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="pages/contact.html"><i class="bi bi-telephone"></i>  Contacto</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+    </div>  
     <!--Final del navbar-->
 
 <!--Inicio de carousel-->
-    <div class="carousel">
-      <ul class="carousel__slides">
-          <input type="radio" name="radio-buttons" id="img-1"
-              checked/>
-          <li class="carousel__container">
-              <div class="carousel__image">
-                  <img src="img/slide/3.png">
-                  <div class="carousel__caption">
-                      <h1 class="carousel__title">BIENVENIDOS</h1>
-                      <p class="carousel__paragraph">A Cachureando.cl</p>
-                  </div>
-              </div>
-              <div class="carousel__controls">
-                  <label for="img-3" class="carousel__prevSlide">
-                      <span>&lsaquo;</span>
-                  </label>
-                  <label for="img-2" class="carousel__nxtSlide">
-                      <span>&rsaquo;</span>
-                  </label>
-              </div>
-          </li>
-          <input type="radio" name="radio-buttons" id="img-2" />
-          <li class="carousel__container">
-              <div class="carousel__image">
-                  <img  src="img/slide/1.png">
-                  <div class="carousel__caption"> 
-                      <h1 class="carousel__subtitle">¿Quienes somos?</h1>
-                      <p >Cachureando es una emprendimiento familiar que comenzó en
-                          años de
-                          pandemia, nos manejamos con todo tipo de productos
-                          que va más allá de tu imaginación.
-                          Somos una distribuidora de menajes, vestuarios, mueblería y
-                          decoración, con ubicación en Viña del Mar.</p><br>
-                  </div>
-              </div>
-              <div class="carousel__controls">
-                  <label for="img-1" class="carousel__prevSlide">
-                      <span>&lsaquo;</span>
-                  </label>
-                  <label for="img-3" class="carousel__nxtSlide">
-                      <span>&rsaquo;</span>
-                  </label>
-              </div>
-          </li>
-          <input type="radio" name="radio-buttons" id="img-3" />
-          <li class="carousel__container">
-              <div class="carousel__image">
-                  <img src="img/slide/23.png">
-              </div>
-              <div class="carousel__controls">
-                  <label for="img-2" class="carousel__prevSlide">
-                      <span>&lsaquo;</span>
-                  </label>
-                  <label for="img-1" class="carousel__nxtSlide">
-                      <span>&rsaquo;</span>
-                  </label>
-              </div>
-          </li>
-          <div class="carousel__dots">
-              <label for="img-1" class="carousel__singleDot" id="img-dot-1"></label>
-              <label for="img-2" class="carousel__singleDot" id="img-dot-2"></label>
-              <label for="img-3" class="carousel__singleDot" id="img-dot-3"></label>
+ <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" class="active" aria-current="true" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" class="active" aria-current="true" aria-label="Slide 3"></button>
+    </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <img src="img/slide/3.png" class="d-block w-100" alt="..." >
+          <div class="carousel-caption">
+            <h1 class="titulo">BIENVENIDOS</h1>
+            <p>A Cachureando.cl</p>
           </div>
-      </ul>
-  </div>
-<!--Fin carousel-->
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+          <img src="img/slide/1.png" class="d-block w-100" alt="...">
+          <div class="carousel-caption">
+            <p></p>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+          <img src="img/slide/23.png" class="d-block w-100" alt="...">
+          <div class="carousel-caption">
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+  <!--Fin carousel-->
 
 <!--Bloque pie de páquina--> 
 <footer class="footer">
@@ -129,6 +104,7 @@
     </div>
   </footer>
 
-  <script src="https://kit.fontawesome.com/cadd79f153.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/cadd79f153.js" crossorigin="anonymous"></script>
 </body>
 </html>

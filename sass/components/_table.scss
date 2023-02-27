@@ -1,0 +1,54 @@
+.table__back{
+    padding: 20px 0px 20px 10px;
+  }
+  
+  .table__arrow{
+    float: left;
+    width: 15px;
+    margin: 1px 4px 0px 0px;
+  }
+  
+  
+  .table__icon{
+    float: left;
+    width: 15px;
+    margin: 7px 7px 0px 0px;
+  }
+  
+  
+  .table__link{
+    text-decoration-line: none;
+    color: #000;
+  }
+  
+  .table__image{
+      display: contents;
+      width: auto;
+      position: absolute;
+      left: 0;
+  
+  }
+  .table__product{
+      width: 38%;
+      height: auto;
+  
+  }
+  .table__comments{
+      font-family: sans-serif;
+      display: block;
+      width: 38%;
+      height: 600px;
+      margin-left: 10px;
+  
+  }
+  .table__description{
+      /* estos tres primeros parametros me permitieron dejar esta barra a la derecha */
+      position: absolute;
+      line-height: 30px;
+      right: 0;
+      top: 0;
+      width: 60% ;
+      height: 100%;
+      padding-top: 43px;
+  
+  }

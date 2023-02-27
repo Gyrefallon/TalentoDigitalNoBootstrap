@@ -7,33 +7,41 @@
     <title>Gallery</title>
     <link rel="shortcut icon" href="../../img/icon/logo.png">
     <link rel="stylesheet" href="../css/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
 </head>
 <body>
 
   <!--Inicio navbar-->
-  <div class="nav">
-    <input type="checkbox" id="nav__check">
-    <div class="nav__header">
-      <div class="nav__title">
-        Cachureando
-      </div>
-    <div class="nav__image">
-      <img src="../img/icon/logo.png" alt="">
-    </div>
-    </div>
-    <div class="nav__btn">
-      <label for="nav__check">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
-    </div>
-    <div class="nav__links">
-      <a href="../index.html">Inicio</a>
-      <a href="gallery.html">Galeria</a>
-      <a href="contact.html">Contacto</a>
-    </div>
-  </div>
+  <div class="w-100">
+    <nav class="navbar navbar-expand sticky-top nav__color" >
+        <div class="container-fluid">
+          <div class="navbar-brand d-sm-block d-md-none">
+                <img class="rounded navarimg" width="30px" src="../TalentoDigitalNoBootstrap-navbar/img/icon/logo.png">
+              </div>
+              <a class="navbar-brand d-none d-sm-none d-md-block" href="index.html">Cachureando</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+          <div class="collapse navbar-collapse" id="navbarColor03">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="../index.html"><i class="bi bi-house"></i>  Inicio
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="gallery.html"><i class="bi bi-camera"></i>  Galería</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html"><i class="bi bi-telephone"></i>  Contacto</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+  </div>  
   <!--Termino navbar-->
 
 
@@ -136,6 +144,53 @@
                 <button class="grid__btn" data-price="30000" onclick="cartAdd(this)" data-item="8"><span>30.000</span></button>
               </div>
         </div>
+        <div class="grid__card">
+          <a href="products/jeanhanger.html" class="card__link">
+            <div class="grid__image">
+              <img class="grid__card--img" src="../img/gallery/colgadorjeans.jpg" alt="1">
+            </div>
+            <div class="grid__textblock">
+                <h5 class="grid__blocktitle">Colgador para celular</h5>
+                <p class="grid__blocktext">Colgador para smartphone.</p>
+                </a>
+                <button class="grid__btn" data-price="8000" onclick="cartAdd(this)" data-item="9"><span>8.000</span></button>
+              </div>
+        </div><div class="grid__card">
+          <a href="products/rocker.html" class="card__link">
+            <div class="grid__image">
+              <img class="grid__card--img" src="../img/gallery/balancin.jpg" alt="lights">
+            </div>
+            <div class="grid__textblock">
+              <h5 class="grid__blocktitle">Balancín color amarillo</h5>
+              <p class="grid__blocktext">Balancín pequeño color amarillo.</p>
+            </a>
+              <button class="grid__btn" data-price="30000"  onclick="cartAdd(this)" data-item="10"><span>30.000</span></button>
+            </div>
+        </div>
+      </div><div class="grid__card">
+        <a href="products/coatrack.html" class="card__link">
+          <div class="grid__image">
+            <img class="grid__card--img" src="../img/gallery/tenedors.jpg" alt="lights">
+          </div>
+          <div class="grid__textblock">
+            <h5 class="grid__blocktitle">Perchero rock dorado</h5>
+            <p class="grid__blocktext">Percheros de metal.</p>
+          </a>
+            <button class="grid__btn" data-price="35000"  onclick="cartAdd(this)" data-item="11"><span>35.000</span></button>
+          </div>
+      </div>
+      </div><div class="grid__card">
+        <a href="products/trashcan.html" class="card__link">
+          <div class="grid__image">
+            <img class="grid__card--img" src="../img/gallery/botebasura.jpg" alt="lights">
+          </div>
+          <div class="grid__textblock">
+            <h5 class="grid__blocktitle">Basurero</h5>
+            <p class="grid__blocktext">Basurero con forma de diamante.</p>
+          </a>
+            <button class="grid__btn" data-price="40000"  onclick="cartAdd(this)" data-item="12"><span>40.000</span></button>
+          </div>
+      </div>
     </section>
             <!-- Fin Galeria flotante de productos -->
 <!-- Caja carrito de compras -->
@@ -179,6 +234,7 @@
 
 <script src="https://kit.fontawesome.com/cadd79f153.js" crossorigin="anonymous"></script>
 <script src="../js/ShoppingCart/script.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    
 </body>
 </html>
