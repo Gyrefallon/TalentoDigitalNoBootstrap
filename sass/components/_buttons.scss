@@ -1,0 +1,17 @@
+/* estilo botones de producto */
+.grid__btn{
+    margin: 20px;
+    padding: 3px 21px;
+    width: 120px; 
+    height: 40px;
+    border-radius: 10px;
+    background-color: $colorOrange;
+    color: $colorWhite;
+    font-size: 12px;
+    font-family: $fontQuestrial;
+    text-decoration: none;
+    vertical-align: middle;
+    letter-spacing: 2px;
+    border: 0px;
+    transition: transform 0.2s ease;
+}

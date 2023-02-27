@@ -1,0 +1,40 @@
+/* bloque contadores de carro */
+.cart{
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+/* estilo de cajas de carro */
+.cart__counter,.cart__total{
+    margin: auto;
+    width: 40%;
+    height: 150px;
+    margin: 20px;
+    background-color: $colorWhite;
+    box-shadow: 5px 5px 5px $colorShadow;
+    border-radius: 15px;
+    display: inline-block;
+    vertical-align: top;
+}
+.cart_title{
+    font-family: $fontQuestrial;
+    color:$colorBlack;
+}
+
+/* Estilo de botones de pago y limpiar */
+.cart__pay,.cart__reset{
+    margin: 20px;
+    padding: 3px 21px;
+    width: 120px; 
+    height: 40px;
+    border-radius: 10px;
+    background-color: $colorOrange;
+    color: $colorWhite;
+    font-size: 12px;
+    font-family: $fontQuestrial;
+    text-decoration: none;
+    vertical-align: middle;
+    letter-spacing: 2px;
+    border: 0px;
+    transition: transform 0.2s ease;
+}
