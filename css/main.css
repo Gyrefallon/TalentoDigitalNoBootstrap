@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
 body {
-  margin: 0px;
+  margin: auto;
   font-family: 'segoe ui'; }
 
 * {
@@ -56,6 +56,18 @@ body {
   text-decoration-line: none;
   color: #000; }
 
+.centered {
+  display: flex;
+  justify-content: center; }
+
+@media (max-width: 768px) {
+  .carousel-inner {
+    height: 700px;
+    margin-bottom: -175px; }
+
+  .carousel-item img {
+    height: 700px;
+    object-fit: cover; } }
 /* bloque contadores de carro */
 .cart {
   text-align: center;
@@ -79,7 +91,25 @@ body {
   color: black; }
 
 /* Estilo de botones de pago y limpiar */
-.cart__pay, .cart__reset {
+@media (max-width: 600px) {
+  .cart {
+    display: grid;
+    grid-template-columns: auto auto;
+    width: auto; }
+    .cart h2 {
+      font-size: 15px;
+      font-weight: bolder; }
+
+  .cart__counter, .cart__total {
+    width: 135px;
+    display: block;
+    margin: 3px;
+    padding: 10px; }
+
+  .cart_title {
+    font-size: small; } }
+/* estilo botones de producto */
+.grid__btn {
   margin: 20px;
   padding: 3px 21px;
   width: 120px;
@@ -95,8 +125,7 @@ body {
   border: 0px;
   transition: transform 0.2s ease; }
 
-/* estilo botones de producto */
-.grid__btn {
+.centered__pay, .centered__reset {
   margin: 20px;
   padding: 3px 21px;
   width: 120px;
@@ -303,6 +332,34 @@ form.stars {
   height: 100%;
   padding-top: 43px; }
 
+@media (max-width: 600px) {
+  .table {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 10px; }
+
+  .table__description {
+    display: inline-block;
+    position: relative;
+    margin: 10px;
+    width: 100%;
+    height: 720px; }
+
+  .table__comments {
+    font-family: sans-serif;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 150px;
+    margin-top: 120px; }
+
+  .table__product {
+    width: 100%;
+    height: auto; }
+
+  .table__image {
+    position: relative;
+    width: 100%; } }
 /* establecer tabla de prodcutos (grid) */
 .grid {
   display: grid;
@@ -324,7 +381,7 @@ form.stars {
   flex-flow: column;
   text-align: center;
   align-items: center;
-  width: 300ppx; }
+  width: 300px; }
 
 /* acomodacion de imagen */
 .grid__image {
@@ -344,12 +401,16 @@ form.stars {
     grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 600px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr); } }
+    grid-template-columns: auto auto;
+    margin: 10px; }
+
+  .grid__card {
+    width: 145px; } }
 .card__link {
   color: black;
   text-decoration: none; }
 
-footer {
+.footer {
   position: relative;
   bottom: 0px;
   left: 0;
@@ -358,7 +419,8 @@ footer {
   height: 100px;
   width: auto;
   padding: 0px 0px 10px 0px;
-  color: #fff; }
+  color: #fff;
+  padding-bottom: 150px; }
 
 .footer__list {
   list-style: none;
@@ -410,10 +472,22 @@ footer {
   .footer__bottom span {
     text-transform: uppercase; }
 
+@media (max-width: 768px) {
+  .footer__socials {
+    margin: 5px; }
+
+  .footer__socials--facebook {
+    margin: 5px; }
+
+  .footer {
+    bottom: -175px; } }
 .nav__input--nocheck {
   display: none; }
 
 .nav__color {
   background: #1c9636; }
+
+.nav__image {
+  width: 40px; }
 
 /*# sourceMappingURL=main.css.map */

@@ -11,3 +11,21 @@
     text-decoration-line: none;
     color: #000;
   }
+
+  .centered{
+    display: flex;
+    justify-content: center;
+  }
+
+  @media(max-width:768px){
+    .carousel-inner{
+      height: 700px;
+      margin-bottom: -175px;
+  }
+  .carousel-item{
+    img{
+    height: 700px;
+    object-fit: cover;
+  }
+  }
+}

@@ -22,19 +22,24 @@
 }
 
 /* Estilo de botones de pago y limpiar */
-.cart__pay,.cart__reset{
-    margin: 20px;
-    padding: 3px 21px;
-    width: 120px; 
-    height: 40px;
-    border-radius: 10px;
-    background-color: $colorOrange;
-    color: $colorWhite;
-    font-size: 12px;
-    font-family: $fontQuestrial;
-    text-decoration: none;
-    vertical-align: middle;
-    letter-spacing: 2px;
-    border: 0px;
-    transition: transform 0.2s ease;
+
+@media (max-width: 600px) {
+    .cart{
+        display:grid;
+        grid-template-columns: auto auto;
+        width: auto;
+        h2{
+            font-size: 15px;
+            font-weight: bolder;
+        }
+    }
+    .cart__counter,.cart__total{
+        width: 135px;
+        display: block;
+        margin:3px;
+        padding: 10px;
+    }
+    .cart_title{
+        font-size: small;
+    }
 }

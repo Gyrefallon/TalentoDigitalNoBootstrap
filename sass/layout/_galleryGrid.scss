@@ -19,7 +19,7 @@
     flex-flow: column;
     text-align: center;
     align-items: center;
-    width: 300ppx
+    width: 300px;
 }
 /* acomodacion de imagen */
 .grid__image{
@@ -39,8 +39,14 @@
     .grid{ grid-template-columns: repeat(3, 1fr);}
 }
 @media(max-width: 600px) {
-    .grid{ grid-template-columns: repeat(2, 1fr);}
+    .grid{ 
+        grid-template-columns: auto auto;
+        margin:10px;
+    }
+    .grid__card{
+        width: 145px;
 
+    }
     
 }
 .card__link{
