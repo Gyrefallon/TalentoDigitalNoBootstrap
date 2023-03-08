@@ -18,11 +18,11 @@ function cargar(arreglo){
             <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
             <i class="bi bi-file-minus"></i>
             </button>
-            <input id="form1" min="0" name="quantity" value="${element.cantidad}" type="number" class="form-control form-control-sm" readonly/>
-            <button class="btn btn-link px-2" id="${element.codigo}" onclick="this.parentNode.querySelector('input[type=number]').stepUp();sumar(this)">
+            <input id="form1" min="0" name="${element.nombre}" value="${element.cantidad}" type="number" class="form-control form-control-sm" readonly/>
+            <button class="btn btn-link px-2" id="${element.codigo}" onclick="this.parentNode.querySelector('input[name=${element.nombre}]').stepUp();sumar(this)">
             <i class="bi bi-file-plus"></i>
             </button>
-            <div id="totalUni">DINERO TOTAL DE PRODUCTO</div>
+            <div id="totalUni">Total de este producto $ ${element.cantidad*element.precio}</div>
             <span class="material-symbols-outlined" onclick="eliminar(${index})"> delete </span>
         </div>
         `
@@ -69,8 +69,9 @@ function sumar(event){
     console.log(posicion);
     carro[posicion].cantidad = Number(cantidadAdd);
     tProduct = carro[posicion].precio * Number(cantidadAdd);
-    Total.innerHTML = "Total de este producto $" + tProduct;
+    Total.innerHTML = "Total de este producto $ " + tProduct;
     console.log(carro);
+    cargar(carro);
     // let cantidadAdd = document.querySelector("input.cantidad").value;
 
 }
