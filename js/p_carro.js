@@ -18,7 +18,7 @@ function cargar(arreglo){
             <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
             <i class="bi bi-file-minus"></i>
             </button>
-            <input id="form1" min="1" name="quantity" value="1" type="number" class="form-control form-control-sm" readonly/>
+            <input id="form1" min="0" name="quantity" value="${element.cantidad}" type="number" class="form-control form-control-sm" readonly/>
             <button class="btn btn-link px-2" id="${element.codigo}" onclick="this.parentNode.querySelector('input[type=number]').stepUp();sumar(this)">
             <i class="bi bi-file-plus"></i>
             </button>
@@ -42,9 +42,10 @@ function agregar(event) {
         // observar si es necesario cambiar las funciones a find
         // let cantidadAdd = document.querySelector("input.cantidad").value;
         let stock = Number(event.getAttribute('data-product'));
+        console.log(stock)
         carro.push(bodega[stock]);
-        let ultimaPosicion = carro.length -1;
-        console.log(ultimaPosicion);
+        // let ultimaPosicion = carro.length -1;
+        // console.log(ultimaPosicion);
         
         // carro[ultimaPosicion].cantidad = Number(cantidadAdd);
         cargar(carro);
@@ -63,8 +64,13 @@ function sumar(event){
     buscaItem.cantidad = Number(cantidadAdd);
     console.log(buscaItem);
     var Total= document.getElementById("totalUni");
-    tProduct = cantidadAdd * buscaItem.precio;
+    // tProduct = cantidadAdd * buscaItem.precio;
+    var posicion = carro.indexOf(buscaItem);
+    console.log(posicion);
+    carro[posicion].cantidad = Number(cantidadAdd);
+    tProduct = carro[posicion].precio * Number(cantidadAdd);
     Total.innerHTML = "Total de este producto $" + tProduct;
+    console.log(carro);
     // let cantidadAdd = document.querySelector("input.cantidad").value;
 
 }
