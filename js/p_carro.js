@@ -1,7 +1,7 @@
 let bodega =[
-    {cantidad:0, nombre:"Botellas", codigo:"1234", descripcion:"botellas de vidrio", precio:1000, imagen:"/img/gallery/bottles.jpg"},
-    {cantidad:0, nombre:"Bote", codigo:"5678", descripcion:"tacho de basurah", precio:3500, imagen:"/img/gallery/botebasura.jpg"},
-    {cantidad:0, nombre:"colgante", codigo:"9012", descripcion:"colgante pa guaguas", precio:2750, imagen:"/img/gallery/colgadorjeans.jpg"}
+    {cantidad:0, cuadro:"A", nombre:"Botellas", codigo:"1234", descripcion:"botellas de vidrio", precio:1000, imagen:"/img/gallery/bottles.jpg"},
+    {cantidad:0, cuadro:"B", nombre:"Bote", codigo:"5678", descripcion:"tacho de basurah", precio:3500, imagen:"/img/gallery/botebasura.jpg"},
+    {cantidad:0, cuadro:"C", nombre:"colgante", codigo:"9012", descripcion:"colgante pa guaguas", precio:2750, imagen:"/img/gallery/colgadorjeans.jpg"}
 ];
 let carro =[];
     // posiblemente hay que agregar un onchange en el modificador de precio total
@@ -15,10 +15,10 @@ function cargar(arreglo){
                 <div><h3>${element.nombre}</h3></div>
                 <div><p>codigo${element.codigo}</div>
             </div>
-            <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+            <button id="${element.codigo}" class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[name=${element.nombre}]').stepDown();restar(this)">
             <i class="bi bi-file-minus"></i>
             </button>
-            <input id="form1" min="0" name="${element.nombre}" value="${element.cantidad}" type="number" class="form-control form-control-sm" readonly/>
+            <input id="${element.cuadro}" min="0" name="${element.nombre}" value="${element.cantidad}" type="number" class="form-control form-control-sm" readonly/>
             <button class="btn btn-link px-2" id="${element.codigo}" onclick="this.parentNode.querySelector('input[name=${element.nombre}]').stepUp();sumar(this)">
             <i class="bi bi-file-plus"></i>
             </button>
@@ -59,7 +59,30 @@ function sumar(event){
     console.log("ID del botón: " + id);
     var buscaItem = carro.find(carro => carro.codigo === id);//recuerda, esto es un objeto
     console.log(buscaItem);
-    let cantidadAdd = document.querySelector("input#form1").value;
+    var cuadro = buscaItem.cuadro;
+    let cantidadAdd = document.querySelector("input#"+cuadro).value;
+    console.log(cantidadAdd);
+    buscaItem.cantidad = Number(cantidadAdd);
+    console.log(buscaItem);
+    var Total= document.getElementById("totalUni");
+    // tProduct = cantidadAdd * buscaItem.precio;
+    var posicion = carro.indexOf(buscaItem);
+    console.log(posicion);
+    carro[posicion].cantidad = Number(cantidadAdd);
+    tProduct = carro[posicion].precio * Number(cantidadAdd);
+    Total.innerHTML = "Total de este producto $ " + tProduct;
+    console.log(carro);
+    cargar(carro);
+    // let cantidadAdd = document.querySelector("input.cantidad").value;
+
+}
+function restar(event){
+    var id = event.id;
+    console.log("ID del botón: " + id);
+    var buscaItem = carro.find(carro => carro.codigo === id);//recuerda, esto es un objeto
+    console.log(buscaItem);
+    var cuadro = buscaItem.cuadro;
+    let cantidadAdd = document.querySelector("input#"+cuadro).value;
     console.log(cantidadAdd);
     buscaItem.cantidad = Number(cantidadAdd);
     console.log(buscaItem);
