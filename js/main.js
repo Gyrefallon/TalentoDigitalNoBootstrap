@@ -1,4 +1,10 @@
-    document.getElementById("number").addEventListener("keydown", e => e.keyCode != 38 && e.keyCode != 40 && e.preventDefault()); //El usuario solo puede utlizar las flechas arriba y abajo en el teclado
+let bodega =[
+    {cantidad:0, cuadro:"A", nombre:"Botellas", codigo:"P001", descripcion:"botellas de vidrio", precio:10000, imagen:"/img/gallery/bottles.jpg"},
+    {cantidad:0, cuadro:"B", nombre:"Bote", codigo:"5678", descripcion:"tacho de basurah", precio:3500, imagen:"/img/gallery/botebasura.jpg"},
+    {cantidad:0, cuadro:"C", nombre:"colgante", codigo:"9012", descripcion:"colgante pa guaguas", precio:2750, imagen:"/img/gallery/colgadorjeans.jpg"}
+];
+let carro =[];
+document.getElementById("number").addEventListener("keydown", e => e.keyCode != 38 && e.keyCode != 40 && e.preventDefault()); //El usuario solo puede utlizar las flechas arriba y abajo en el teclado
     const input = document.querySelector("#number"); //Selecciona la etiqueta que tenga un id, aqui por ejemplo está seleccionando a la etiqueta que tenga el ID de numeros
     const valueInput = document.getElementById("text"); //Selecciona todos los elementos con la ID especificada.
     input.addEventListener('change',numbers);//el addEventListener recibe dos parametros toma el evento change  y lo pone a escuchar,
@@ -115,12 +121,12 @@ function payUp(){
     }
 }
 
-let bodega =[
-    {cantidad:0, cuadro:"A", nombre:"Botellas", codigo:"1234", descripcion:"botellas de vidrio", precio:10000, imagen:"/img/gallery/bottles.jpg"},
-    {cantidad:0, cuadro:"B", nombre:"Bote", codigo:"5678", descripcion:"tacho de basurah", precio:3500, imagen:"/img/gallery/botebasura.jpg"},
-    {cantidad:0, cuadro:"C", nombre:"colgante", codigo:"9012", descripcion:"colgante pa guaguas", precio:2750, imagen:"/img/gallery/colgadorjeans.jpg"}
-];
-let carro =[];
+// let bodega =[
+//     {cantidad:0, cuadro:"A", nombre:"Botellas", codigo:"P001", descripcion:"botellas de vidrio", precio:10000, imagen:"/img/gallery/bottles.jpg"},
+//     {cantidad:0, cuadro:"B", nombre:"Bote", codigo:"5678", descripcion:"tacho de basurah", precio:3500, imagen:"/img/gallery/botebasura.jpg"},
+//     {cantidad:0, cuadro:"C", nombre:"colgante", codigo:"9012", descripcion:"colgante pa guaguas", precio:2750, imagen:"/img/gallery/colgadorjeans.jpg"}
+// ];
+// let carro =[];
     // posiblemente hay que agregar un onchange en el modificador de precio total
 function cargar(arreglo){
     document.querySelector(".totalizadorP").innerHTML="";
