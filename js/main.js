@@ -130,13 +130,6 @@ function payUp(){
     }
 }
 
-// let bodega =[
-//     {cantidad:0, cuadro:"A", nombre:"Botellas", codigo:"P001", descripcion:"botellas de vidrio", precio:10000, imagen:"/img/gallery/bottles.jpg"},
-//     {cantidad:0, cuadro:"B", nombre:"Bote", codigo:"P001", descripcion:"tacho de basurah", precio:3500, imagen:"/img/gallery/botebasura.jpg"},
-//     {cantidad:0, cuadro:"C", nombre:"colgante", codigo:"P001", descripcion:"colgante pa guaguas", precio:2750, imagen:"/img/gallery/colgadorjeans.jpg"}
-// ];
-// let carro =[];
-    // posiblemente hay que agregar un onchange en el modificador de precio total
 function cargar(arreglo){
     document.querySelector(".totalizadorP").innerHTML="";
     arreglo.forEach((element,index) => {
@@ -145,13 +138,13 @@ function cargar(arreglo){
             <div><img class="imagenCarro" src=${element.imagen}></div>
             <div class="nombCod">
                 <div><h3>${element.nombre}</h3></div>
-                <div><p>codigo${P001ent.codigo}<P001>
+                <p>codigo${element.codigo}<p>
             </div>
-            <button id="${element.codigo}"P001ss="btn btn-link px-2" onclick="this.parentNode.querySelector('input[name=${element.nombre}]').stepDown();restar(this);neto()">
+            <button id="${element.codigo}"class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[name=${element.nombre}]').stepDown();restar(this);neto()">
             <i class="bi bi-file-minus"></i>
             </button>
             <input id="${element.cuadro}" min="0" name="${element.nombre}" value="${element.cantidad}" type="number" class="form-control form-control-sm" readonly/>
-            <button class="btn btn-link px-2" id="${element.codigo}"P001lick="this.parentNode.querySelector('input[name=${element.nombre}]').stepUp();sumar(this);neto()">
+            <button class="btn btn-link px-2" id="${element.codigo}" onclick="this.parentNode.querySelector('input[name=${element.nombre}]').stepUp();sumar(this);neto()">
             <i class="bi bi-file-plus"></i>
             </button>
             <div id="totalUni">Total de este producto $ ${element.cantidad*element.precio}</div>
@@ -164,10 +157,10 @@ function cargar(arreglo){
 function agregar(event) {
     var id = event.id;
 
-    var buscaArreglos = bodega.find(bodega => bodega.codigo =P001d);
+    var buscaArreglos = bodega.find(bodega => bodega.codigo = id);
 
-    var codigoEnP001rado = buscaArreglos.codigo;
-P001 var busCarro = carro.find(carro => carro.codigo =P001d);
+    var codigoEncontrado = buscaArreglos.codigo;
+    var busCarro = carro.find(carro => carro.codigo = id);
     if (busCarro == undefined){
         // observar si es necesario cambiar las funciones a find
         // let cantidadAdd = document.querySelector("input.cantidad").value;
@@ -187,7 +180,7 @@ P001 var busCarro = carro.find(carro => carro.codigo =P001d);
 function sumar(event){
     var id = event.id;
 
-    var buscaItem = carro.find(carro => carro.codigo =P001d);//recuerda, esto es un objeto
+    var buscaItem = carro.find(carro => carro.codigo =id);//recuerda, esto es un objeto
 
     var cuadro = buscaItem.cuadro;
     let cantidadAdd = document.querySelector("input#"+cuadro).value;
@@ -208,7 +201,7 @@ function sumar(event){
 }
 function restar(event){
     var id = event.id;
-    var buscaItem = carro.find(carro => carro.codigo =P001d);//recuerda, esto es un objeto
+    var buscaItem = carro.find(carro => carro.codigo =id);//recuerda, esto es un objeto
     var cuadro = buscaItem.cuadro;
     let cantidadAdd = document.querySelector("input#"+cuadro).value;
     buscaItem.cantidad = Number(cantidadAdd);
