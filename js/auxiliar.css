@@ -36,11 +36,6 @@
     margin: 10px;
     height: 200px;
 }
-img{
-    width: 200px;
-    object-fit: cover;
-    margin: 10px;
-}
 .pointer{
     cursor: pointer;
     color: red;
