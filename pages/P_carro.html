@@ -14,7 +14,7 @@
         <div class="cartita">
             <img src="/img/gallery/bottles.jpg" alt="" srcset="">
             <p>descripcion blablah</p>
-            <p>valor:1000</p>
+            <p>valor:10000</p>
             <!-- <input type="number" min="1" name="cantidad" class="form-control form-control-sm cantidad"> -->
             <button class="agregar" data-product="0" id="1234" onclick="agregar(this)" >Agregar al carro</button>
         </div>
@@ -33,22 +33,25 @@
             <button class="agregar" data-product="2" id="9012" onclick="agregar(this)">Agregar al carro</button>
         </div>
     </div>
+<div class="popup" id="popup">
     <div class="totalizadorP">
-
     </div>
     <h2>Carro</h2>
     <div class="totalizadorR">
         <div class="resumen">
             <h3>Resumen</h3>
             <hr>
-            <p>valor neto</p>
-            <p>IVA</p>
+            <p id="valorNeto"></p>
+            <p id="valorIva"></p>
             <!-- ver manera de como desapareserlo cuando supere los 100.000 -->
-            <p>Despacho</p>
-            <p>Total</p>
+            <p id="valorDespacho"></p>
+            <p id="valorTotal"></p>
+            <button onclick="cerrarPopup()">Cerrar</button>
+            <button onclick="">Pagar</button>
         </div>
-
     </div>
+</div>
+<button onclick="abrirPopup()">Pagar</button>
     <script src="/js/p_carro.js"></script>
 </body>
 </html>

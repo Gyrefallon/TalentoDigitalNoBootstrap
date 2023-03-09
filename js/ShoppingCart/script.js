@@ -4,7 +4,7 @@ shoppingTotal=0;
 // funcion de sumar numero de productos y total de carro
 let cartAdd = button => {
     if (typeof(Storage) !== "undefined") {
-        if (localStorage.productCount && localStorage.shoppingTotal) {
+        if (localStorage.productCount && localStorage.shoppingTotal){
             localStorage.productCount = Number(localStorage.productCount)+1;
             let cash = Number(button.getAttribute('data-price'));
             cartTotal = cartTotal + cash;
@@ -13,7 +13,7 @@ let cartAdd = button => {
             document.getElementById("productCount").innerHTML = localStorage.productCount;
         }
         // else da un valor inicial al "undefined" de localStorage
-        else{ 
+        else{
             localStorage.productCount = 1;
             let cash = Number(button.getAttribute('data-price'));
             cartTotal = 0;
@@ -34,8 +34,10 @@ function resetCart(){
     }
     else{
       alert("No hay articulos en el carro");
-    }  
+    }
 }
+
+
 function payUp(){
     if(localStorage.productCount > 0 && localStorage.shoppingTotal>0){
         localStorage.clear();
