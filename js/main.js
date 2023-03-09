@@ -156,11 +156,8 @@ function cargar(arreglo){
 // quiero agregar el objeto de un arreglo fijo a uno modificable
 function agregar(event) {
     var id = event.id;
-
-    var buscaArreglos = bodega.find(bodega => bodega.codigo = id);
-
-    var codigoEncontrado = buscaArreglos.codigo;
-    var busCarro = carro.find(carro => carro.codigo = id);
+    var buscaArreglos = bodega.find(bodega => bodega.codigo === id);
+    var busCarro = carro.find(carro => carro.codigo === id);
     if (busCarro == undefined){
         // observar si es necesario cambiar las funciones a find
         // let cantidadAdd = document.querySelector("input.cantidad").value;
