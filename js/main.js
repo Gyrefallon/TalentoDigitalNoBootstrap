@@ -1,16 +1,16 @@
 let bodega =[
-    {cantidad:0, cuadro:"A", nombre:"Organizador de oficina", codigo:"P001", descripcion:"Organizador colgante de oficina con 4 contenedores.", precio:15000, imagen:"../img/gallery/0eae610c59a2d3a723dcd36b1ecba6f2 (1).jpg"},
-    {cantidad:0, cuadro:"B", nombre:"Lámpara metal colgante", codigo:"P002", descripcion:"Lámpara de láminas de metal con aberturas.", precio:100000, imagen:"../img/gallery/decoracion-con-cosas-recicladas-lamparas.jpg"},
-    {cantidad:0, cuadro:"C", nombre:"Organizador escolar", codigo:"P003", descripcion:"Organizador transportable para útiles escolares.", precio:12000, imagen:"../img/gallery/organizador-con-latas-recicladas.jpg"},
-    {cantidad:0, cuadro:"D", nombre:"Libreta reciclada", codigo:"P004", descripcion:"Libreta de papel reciclado 100 hojas 12x9 cm con lápiz.", precio:6000, imagen:"../img/gallery/libreta-hecha-hojas-recicladas-espiral-espacio-escribir-hoja-blanco-colores-otono-lapiz-reciclado_603822-118.jpg"},
-    {cantidad:0, cuadro:"E", nombre:"Macetero diseños", codigo:"P005", descripcion:"Macetero diseño infantil, 10 cm de diámetro.", precio:10000, imagen:"../img/gallery/qqqhcer.jpg"},
-    {cantidad:0, cuadro:"F", nombre:"Peineta madera", codigo:"P006", descripcion:"Peineta ecológica de madera de 15 cm.", precio:12000, imagen:"../img/gallery/cepillo-madera-beneficios.jpg"},
-    {cantidad:0, cuadro:"G", nombre:"Macetero colgante", codigo:"P007", descripcion:"Macetero de plástico colgante 20x10 cm.", precio:7000, imagen:"../img/gallery/cómo-crear-macetas-recicladas-y-decorar-tu-patio.jpg"},
-    {cantidad:0, cuadro:"H", nombre:"Macetero vidrio", codigo:"P008", descripcion:"Macetero de vidrio de 37x15 cm de diámetro.", precio:30000, imagen:"/img/gallery/bottles.jpg"},
-    {cantidad:0, cuadro:"I", nombre:"Colgador para celular", codigo:"P009", descripcion:"Colgador para smartphone.", precio:8000, imagen:"../img/gallery/colgadorjeans.jpg"},
-    {cantidad:0, cuadro:"J", nombre:"Balancín color amarillo", codigo:"P010", descripcion:"Balancín pequeño color amarillo.", precio:30000, imagen:"../img/gallery/balancin.jpg"},
-    {cantidad:0, cuadro:"K", nombre:"Perchero rock dorado", codigo:"P011", descripcion:"Percheros de metal.", precio:35000, imagen:"../img/gallery/tenedors.jpg"},
-    {cantidad:0, cuadro:"L", nombre:"Basurero", codigo:"P012", descripcion:"Basurero con forma de diamante.", precio:35000, imagen:"products/trashcan.html"}
+    {cantidad:0, cuadro:"A", nombre:"Organizador_de_oficina", codigo:"P001", descripcion:"Organizador colgante de oficina con 4 contenedores.", precio:15000, imagen:"../img/gallery/0eae610c59a2d3a723dcd36b1ecba6f2 (1).jpg"},
+    {cantidad:0, cuadro:"B", nombre:"Lámpara_metal_colgante", codigo:"P002", descripcion:"Lámpara de láminas de metal con aberturas.", precio:100000, imagen:"../img/gallery/decoracion-con-cosas-recicladas-lamparas.jpg"},
+    {cantidad:0, cuadro:"C", nombre:"Organizador_escolar", codigo:"P003", descripcion:"Organizador transportable para útiles escolares.", precio:12000, imagen:"../img/gallery/organizador-con-latas-recicladas.jpg"},
+    {cantidad:0, cuadro:"D", nombre:"Libreta_reciclada", codigo:"P004", descripcion:"Libreta de papel reciclado 100 hojas 12x9 cm con lápiz.", precio:6000, imagen:"../img/gallery/libreta-hecha-hojas-recicladas-espiral-espacio-escribir-hoja-blanco-colores-otono-lapiz-reciclado_603822-118.jpg"},
+    {cantidad:0, cuadro:"E", nombre:"Macetero_diseños", codigo:"P005", descripcion:"Macetero diseño infantil, 10 cm de diámetro.", precio:10000, imagen:"../img/gallery/qqqhcer.jpg"},
+    {cantidad:0, cuadro:"F", nombre:"Peineta_madera", codigo:"P006", descripcion:"Peineta ecológica de madera de 15 cm.", precio:12000, imagen:"../img/gallery/cepillo-madera-beneficios.jpg"},
+    {cantidad:0, cuadro:"G", nombre:"Macetero_colgante", codigo:"P007", descripcion:"Macetero de plástico colgante 20x10 cm.", precio:7000, imagen:"../img/gallery/cómo-crear-macetas-recicladas-y-decorar-tu-patio.jpg"},
+    {cantidad:0, cuadro:"H", nombre:"Macetero_vidrio", codigo:"P008", descripcion:"Macetero de vidrio de 37x15 cm de diámetro.", precio:30000, imagen:"/img/gallery/bottles.jpg"},
+    {cantidad:0, cuadro:"I", nombre:"Colgador_para_celular", codigo:"P009", descripcion:"Colgador para smartphone.", precio:8000, imagen:"../img/gallery/colgadorjeans.jpg"},
+    {cantidad:0, cuadro:"J", nombre:"Balancín_color_amarillo", codigo:"P010", descripcion:"Balancín pequeño color amarillo.", precio:30000, imagen:"../img/gallery/balancin.jpg"},
+    {cantidad:0, cuadro:"K", nombre:"Perchero_rock_dorado", codigo:"P011", descripcion:"Percheros de metal.", precio:35000, imagen:"../img/gallery/tenedors.jpg"},
+    {cantidad:0, cuadro:"L", nombre:"Basurero", codigo:"P012", descripcion:"Basurero con forma de diamante.", precio:35000, imagen:"../img/gallery/botebasura.jpg"}
 ];
 let carro =[];
 document.getElementById("number").addEventListener("keydown", e => e.keyCode != 38 && e.keyCode != 40 && e.preventDefault()); //El usuario solo puede utlizar las flechas arriba y abajo en el teclado
@@ -137,7 +137,7 @@ function cargar(arreglo){
         `<div class="filacaja">
             <div><img class="imagenCarro" src=${element.imagen}></div>
             <div class="nombCod">
-                <div><h3>${element.nombre}</h3></div>
+                <div><h3>${element.nombre.split("_").join(" ")}</h3></div>
                 <p>codigo${element.codigo}<p>
             </div>
             <button id="${element.codigo}"class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[name=${element.nombre}]').stepDown();restar(this);neto()">
@@ -231,7 +231,7 @@ function neto(){
         let bIva = suma * 0.19
         iva.innerHTML = "Valor IVA: "+ bIva;
         let despacho = document.getElementById("valorDespacho")
-        if (suma < 100000){
+        if ((suma+bIva) < 100000){
             var valor=suma*0.05
             despacho.innerHTML = "Total despacho: $"+ (valor);
             despacho = valor
