@@ -1,7 +1,16 @@
 let bodega =[
-    {cantidad:0, cuadro:"A", nombre:"Botellas", codigo:"P001", descripcion:"botellas de vidrio", precio:10000, imagen:"/img/gallery/bottles.jpg"},
-    {cantidad:0, cuadro:"B", nombre:"Bote", codigo:"5678", descripcion:"tacho de basurah", precio:3500, imagen:"/img/gallery/botebasura.jpg"},
-    {cantidad:0, cuadro:"C", nombre:"colgante", codigo:"9012", descripcion:"colgante pa guaguas", precio:2750, imagen:"/img/gallery/colgadorjeans.jpg"}
+    {cantidad:0, cuadro:"A", nombre:"Organizador de oficina", codigo:"P001", descripcion:"Organizador colgante de oficina con 4 contenedores.", precio:15000, imagen:"../img/gallery/0eae610c59a2d3a723dcd36b1ecba6f2 (1).jpg"},
+    {cantidad:0, cuadro:"B", nombre:"Lámpara metal colgante", codigo:"P002", descripcion:"Lámpara de láminas de metal con aberturas.", precio:100000, imagen:"../img/gallery/decoracion-con-cosas-recicladas-lamparas.jpg"},
+    {cantidad:0, cuadro:"C", nombre:"Organizador escolar", codigo:"P003", descripcion:"Organizador transportable para útiles escolares.", precio:12000, imagen:"../img/gallery/organizador-con-latas-recicladas.jpg"},
+    {cantidad:0, cuadro:"D", nombre:"Libreta reciclada", codigo:"P004", descripcion:"Libreta de papel reciclado 100 hojas 12x9 cm con lápiz.", precio:6000, imagen:"../img/gallery/libreta-hecha-hojas-recicladas-espiral-espacio-escribir-hoja-blanco-colores-otono-lapiz-reciclado_603822-118.jpg"},
+    {cantidad:0, cuadro:"E", nombre:"Macetero diseños", codigo:"P005", descripcion:"Macetero diseño infantil, 10 cm de diámetro.", precio:10000, imagen:"../img/gallery/qqqhcer.jpg"},
+    {cantidad:0, cuadro:"F", nombre:"Peineta madera", codigo:"P006", descripcion:"Peineta ecológica de madera de 15 cm.", precio:12000, imagen:"../img/gallery/cepillo-madera-beneficios.jpg"},
+    {cantidad:0, cuadro:"G", nombre:"Macetero colgante", codigo:"P007", descripcion:"Macetero de plástico colgante 20x10 cm.", precio:7000, imagen:"../img/gallery/cómo-crear-macetas-recicladas-y-decorar-tu-patio.jpg"},
+    {cantidad:0, cuadro:"H", nombre:"Macetero vidrio", codigo:"P008", descripcion:"Macetero de vidrio de 37x15 cm de diámetro.", precio:30000, imagen:"/img/gallery/bottles.jpg"},
+    {cantidad:0, cuadro:"I", nombre:"Colgador para celular", codigo:"P009", descripcion:"Colgador para smartphone.", precio:8000, imagen:"../img/gallery/colgadorjeans.jpg"},
+    {cantidad:0, cuadro:"J", nombre:"Balancín color amarillo", codigo:"P010", descripcion:"Balancín pequeño color amarillo.", precio:30000, imagen:"../img/gallery/balancin.jpg"},
+    {cantidad:0, cuadro:"K", nombre:"Perchero rock dorado", codigo:"P011", descripcion:"Percheros de metal.", precio:35000, imagen:"../img/gallery/tenedors.jpg"},
+    {cantidad:0, cuadro:"L", nombre:"Basurero", codigo:"P012", descripcion:"Basurero con forma de diamante.", precio:35000, imagen:"products/trashcan.html"}
 ];
 let carro =[];
 document.getElementById("number").addEventListener("keydown", e => e.keyCode != 38 && e.keyCode != 40 && e.preventDefault()); //El usuario solo puede utlizar las flechas arriba y abajo en el teclado
@@ -123,8 +132,8 @@ function payUp(){
 
 // let bodega =[
 //     {cantidad:0, cuadro:"A", nombre:"Botellas", codigo:"P001", descripcion:"botellas de vidrio", precio:10000, imagen:"/img/gallery/bottles.jpg"},
-//     {cantidad:0, cuadro:"B", nombre:"Bote", codigo:"5678", descripcion:"tacho de basurah", precio:3500, imagen:"/img/gallery/botebasura.jpg"},
-//     {cantidad:0, cuadro:"C", nombre:"colgante", codigo:"9012", descripcion:"colgante pa guaguas", precio:2750, imagen:"/img/gallery/colgadorjeans.jpg"}
+//     {cantidad:0, cuadro:"B", nombre:"Bote", codigo:"P001", descripcion:"tacho de basurah", precio:3500, imagen:"/img/gallery/botebasura.jpg"},
+//     {cantidad:0, cuadro:"C", nombre:"colgante", codigo:"P001", descripcion:"colgante pa guaguas", precio:2750, imagen:"/img/gallery/colgadorjeans.jpg"}
 // ];
 // let carro =[];
     // posiblemente hay que agregar un onchange en el modificador de precio total
@@ -136,13 +145,13 @@ function cargar(arreglo){
             <div><img class="imagenCarro" src=${element.imagen}></div>
             <div class="nombCod">
                 <div><h3>${element.nombre}</h3></div>
-                <div><p>codigo${element.codigo}</div>
+                <div><p>codigo${P001ent.codigo}<P001>
             </div>
-            <button id="${element.codigo}" class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[name=${element.nombre}]').stepDown();restar(this);neto()">
+            <button id="${element.codigo}"P001ss="btn btn-link px-2" onclick="this.parentNode.querySelector('input[name=${element.nombre}]').stepDown();restar(this);neto()">
             <i class="bi bi-file-minus"></i>
             </button>
             <input id="${element.cuadro}" min="0" name="${element.nombre}" value="${element.cantidad}" type="number" class="form-control form-control-sm" readonly/>
-            <button class="btn btn-link px-2" id="${element.codigo}" onclick="this.parentNode.querySelector('input[name=${element.nombre}]').stepUp();sumar(this);neto()">
+            <button class="btn btn-link px-2" id="${element.codigo}"P001lick="this.parentNode.querySelector('input[name=${element.nombre}]').stepUp();sumar(this);neto()">
             <i class="bi bi-file-plus"></i>
             </button>
             <div id="totalUni">Total de este producto $ ${element.cantidad*element.precio}</div>
@@ -155,11 +164,10 @@ function cargar(arreglo){
 function agregar(event) {
     var id = event.id;
 
-    var buscaArreglos = bodega.find(bodega => bodega.codigo === id);
+    var buscaArreglos = bodega.find(bodega => bodega.codigo =P001d);
 
-    var codigoEncontrado = buscaArreglos.codigo;
-
-    var busCarro = carro.find(carro => carro.codigo === id);
+    var codigoEnP001rado = buscaArreglos.codigo;
+P001 var busCarro = carro.find(carro => carro.codigo =P001d);
     if (busCarro == undefined){
         // observar si es necesario cambiar las funciones a find
         // let cantidadAdd = document.querySelector("input.cantidad").value;
@@ -179,7 +187,7 @@ function agregar(event) {
 function sumar(event){
     var id = event.id;
 
-    var buscaItem = carro.find(carro => carro.codigo === id);//recuerda, esto es un objeto
+    var buscaItem = carro.find(carro => carro.codigo =P001d);//recuerda, esto es un objeto
 
     var cuadro = buscaItem.cuadro;
     let cantidadAdd = document.querySelector("input#"+cuadro).value;
@@ -200,7 +208,7 @@ function sumar(event){
 }
 function restar(event){
     var id = event.id;
-    var buscaItem = carro.find(carro => carro.codigo === id);//recuerda, esto es un objeto
+    var buscaItem = carro.find(carro => carro.codigo =P001d);//recuerda, esto es un objeto
     var cuadro = buscaItem.cuadro;
     let cantidadAdd = document.querySelector("input#"+cuadro).value;
     buscaItem.cantidad = Number(cantidadAdd);
