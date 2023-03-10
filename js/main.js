@@ -118,16 +118,7 @@ window.onload=function(){
 
 }
 
-function payUp(){
-    if(carro.cantidad > 0){
-        neto();
-        carro.cantidad = 0
-        alert("Has pagado satisfactoriamente");
-    }
-    else{
-        alert("No hay articulos en su carro")
-    }
-}
+
 
 
 //Funcion de carro nuevo
@@ -267,6 +258,21 @@ function abrirPopup() {
     var popup = document.getElementById("popup");
     popup.style.display = "none";
   }
+
+  function payUp(){
+    var suma = 0;
+    for(var i = 0 ; i < carro.length; i++){
+        suma += carro[i].cantidad;
+    }
+    if(suma > 0){
+        alert("Has pagado satisfactoriamente");
+        cargar(carro);
+        neto();
+    }
+    else{
+        alert("No hay articulos en su carro")
+    }
+}
 
 cargar(carro);
 
