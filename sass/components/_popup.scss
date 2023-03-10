@@ -1,6 +1,6 @@
 // cambiar nombres a BEM?
 .totalizadorP{
-    background: $colorLgreen;
+    background: $colorGrey;
     margin: 10px;
     padding: 20px;
     border-radius: 20px;
@@ -10,27 +10,55 @@
     display: flex;
     background-color: $colorWhite;
     margin: 10px;
-    height: 200px;
+    height: 150px;
     border-radius: 20px;
     overflow: hidden;
     object-fit: cover;
+    box-shadow: 0 4px 6px 0 rgba(22, 22, 26, 0.18);
     div{
         img{
-            width: 200px;
+            width: 150px;
             height: 200px;
             object-fit: cover;
             overflow: hidden;
         }
-    } 
-}
-.nombCod{
+    }
+    .nombCod{
+        padding: 10px;
+        width: 200px;
         justify-content: center;
         h3{
             justify-content: center;
             align-self: center;
             text-align: center;
         }
-}
+    }
+    input{
+        height: 30px;
+        width: 50px;
+        margin: auto;
+    }
+    #totalUni{
+        margin-top: 15px;
+        padding: 5px;
+        width: 150px;
+        justify-content: center;
+    }
+    
+    i#trash{
+        color: $colorDelete;
+        margin: auto;
+        padding-right: 20px;
+        vertical-align: middle !important;
+
+    }
+    .bi-file-plus,.bi-file-minus{
+        color: $colorGrey;
+        font-size: larger;
+    }
+} 
+
+
 .pointer{
     cursor: pointer;
     color: red;
@@ -48,4 +76,5 @@
     padding: 20px;
     display: none;
     overflow-y:scroll;
+    border-color: $colorGrey;
   }

@@ -67,7 +67,7 @@ body {
   color: #000; }
 
 .totalizadorP {
-  background: lightgreen;
+  background: #aaa;
   margin: 10px;
   padding: 20px;
   border-radius: 20px;
@@ -77,22 +77,41 @@ body {
   display: flex;
   background-color: #fff;
   margin: 10px;
-  height: 200px;
+  height: 150px;
   border-radius: 20px;
   overflow: hidden;
-  object-fit: cover; }
+  object-fit: cover;
+  box-shadow: 0 4px 6px 0 rgba(22, 22, 26, 0.18); }
   .filacaja div img {
-    width: 200px;
+    width: 150px;
     height: 200px;
     object-fit: cover;
     overflow: hidden; }
-
-.nombCod {
-  justify-content: center; }
-  .nombCod h3 {
-    justify-content: center;
-    align-self: center;
-    text-align: center; }
+  .filacaja .nombCod {
+    padding: 10px;
+    width: 200px;
+    justify-content: center; }
+    .filacaja .nombCod h3 {
+      justify-content: center;
+      align-self: center;
+      text-align: center; }
+  .filacaja input {
+    height: 30px;
+    width: 50px;
+    margin: auto; }
+  .filacaja #totalUni {
+    margin-top: 15px;
+    padding: 5px;
+    width: 150px;
+    justify-content: center; }
+  .filacaja i#trash {
+    color: #DA4D2E;
+    margin: auto;
+    padding-right: 20px;
+    vertical-align: middle !important; }
+  .filacaja .bi-file-plus, .filacaja .bi-file-minus {
+    color: #aaa;
+    font-size: larger; }
 
 .pointer {
   cursor: pointer;
@@ -109,7 +128,8 @@ body {
   border: 1px solid black;
   padding: 20px;
   display: none;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  border-color: #aaa; }
 
 /* bloque contadores de carro */
 .cart {
@@ -178,6 +198,21 @@ body {
   left: 43%;
   top: 43%;
   margin-bottom: 15px; }
+
+.grid__btn--close {
+  margin: 20px;
+  padding: 3px 21px;
+  width: 120px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #f6931f;
+  color: #fff;
+  font-size: 12px;
+  font-family: Questrial;
+  text-decoration: none;
+  vertical-align: middle;
+  letter-spacing: 2px;
+  border: 0px; }
 
 /*Container para el formulario de contacto*/
 .container {

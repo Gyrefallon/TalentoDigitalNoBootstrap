@@ -149,8 +149,8 @@ function cargar(arreglo){
             <button class="btn btn-link px-2" id="${element.codigo}" onclick="this.parentNode.querySelector('input[name=${element.nombre}]').stepUp();sumar(this);neto()">
             <i class="bi bi-file-plus"></i>
             </button>
-            <div id="totalUni">Total de este producto $ ${element.cantidad*element.precio}</div>
-            <span class="material-symbols-outlined pointer" onclick="eliminar(${index})"> Delete </span>
+            <div id="totalUni"><strong>Total de este producto</strong> <br> ${"$"+ element.cantidad*element.precio}</div>
+            <i id="trash" class="fa-solid fa-trash" onclick="eliminar(${index})" ></i>
         </div>
         `
     });
