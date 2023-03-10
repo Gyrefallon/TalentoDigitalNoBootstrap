@@ -188,7 +188,7 @@ function sumar(event){
     for(var i = 0 ; i < carro.length; i++){
         suma += carro[i].cantidad;
     }
-    cant.innerHTML = "Cantidad de Productos: " + suma;
+    cant.innerHTML = suma;
     cargar(carro);
     // let cantidadAdd = document.querySelector("input.cantidad").value;
 
@@ -210,7 +210,7 @@ function restar(event){
     for(var i = 0 ; i < carro.length; i++){
         suma += carro[i].cantidad;
     }
-    cant.innerHTML = "Cantidad de Productos: " +  suma;
+    cant.innerHTML = suma;
     cargar(carro);
     
     // let cantidadAdd = document.querySelector("input.cantidad").value;
@@ -219,8 +219,16 @@ function restar(event){
 function eliminar(indice){
     carro[indice].cantidad=0;
     carro.splice(indice,1);
-    cargar(carro);
     neto();
+    cargar(carro);
+    let suma = 0;
+    console.log(carro);
+    let cant = document.getElementById("productCount");
+    for(var i = 0 ; i < carro.length; i++){
+        suma += carro[i].cantidad;
+    }
+    cant.innerHTML = suma;
+
 }
 
 
