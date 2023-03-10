@@ -130,6 +130,9 @@ function payUp(){
     }
 }
 
+
+//Funcion de carro nuevo
+
 function cargar(arreglo){
     document.querySelector(".totalizadorP").innerHTML="";
     arreglo.forEach((element,index) => {
@@ -138,7 +141,7 @@ function cargar(arreglo){
             <div><img class="imagenCarro" src=${element.imagen}></div>
             <div class="nombCod">
                 <div><h3>${element.nombre.split("_").join(" ")}</h3></div>
-                <p>codigo${element.codigo}<p>
+                <p>codigo: ${element.codigo}<p>
             </div>
             <button id="${element.codigo}"class="btn btn-link px-2" onclick="this.parentNode.querySelector('input[name=${element.nombre}]').stepDown();restar(this);neto()">
             <i class="bi bi-file-minus"></i>
@@ -177,7 +180,7 @@ function agregar(event) {
 function sumar(event){
     var id = event.id;
 
-    var buscaItem = carro.find(carro => carro.codigo =id);//recuerda, esto es un objeto
+    var buscaItem = carro.find(carro => carro.codigo === id);//recuerda, esto es un objeto
 
     var cuadro = buscaItem.cuadro;
     let cantidadAdd = document.querySelector("input#"+cuadro).value;
@@ -209,6 +212,7 @@ function restar(event){
     tProduct = carro[posicion].precio * Number(cantidadAdd);
     Total.innerHTML = "Total de este producto $ " + tProduct;
     cargar(carro);
+    
     // let cantidadAdd = document.querySelector("input.cantidad").value;
 
 }
@@ -242,7 +246,8 @@ function neto(){
         let total = document.getElementById("valorTotal");
         total.innerHTML = "Total + Impuestos: $"+ (suma+despacho+bIva);
         cargar(carro);
-}
+        console.log(carro)
+    }
 
 function abrirPopup() {
     var popup = document.getElementById("popup");

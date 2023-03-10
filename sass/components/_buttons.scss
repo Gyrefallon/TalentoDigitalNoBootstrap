@@ -15,3 +15,15 @@
     border: 0px;
     transition: transform 0.2s ease;
 }
+.newcart__pay{
+    color: $colorWhite;
+    background-color: $colorOrange;
+    border-radius: 10px;
+    width: 120px;
+    height: 40px;
+    border:none;
+    position: relative;
+    left: 43%;
+    top: 43%;
+    margin-bottom: 15px;
+}

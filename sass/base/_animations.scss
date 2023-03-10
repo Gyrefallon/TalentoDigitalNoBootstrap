@@ -10,7 +10,7 @@
         display:none
     }
     &::before{
-        content:"Agregar carrito";
+        content:"Agregar al carrito";
     }
 }
 
@@ -45,3 +45,15 @@
 #newComment:focus{
     border-bottom: 2px solid red;
   }
+
+.newcart__pay:hover{
+    background-color: $colorYellow;
+    color:$colorBlack;
+    border: 2px solid $colorBlack;
+    &::before{
+        content:"Ver Carrito";
+    }
+    span{
+        display: none;
+    }
+}

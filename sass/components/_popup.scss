@@ -1,6 +1,6 @@
 // cambiar nombres a BEM?
 .totalizadorP{
-    background: grey;
+    background: $colorLgreen;
     margin: 10px;
     padding: 20px;
     border-radius: 20px;
@@ -8,7 +8,7 @@
 }
 .filacaja{
     display: flex;
-    background-color: aqua;
+    background-color: $colorWhite;
     margin: 10px;
     height: 200px;
     border-radius: 20px;

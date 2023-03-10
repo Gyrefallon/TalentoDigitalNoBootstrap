@@ -23,7 +23,7 @@ body {
   .grid__btn:hover span {
     display: none; }
   .grid__btn:hover::before {
-    content: "Agregar carrito"; }
+    content: "Agregar al carrito"; }
 
 .cart__pay:hover, .cart__reset:hover {
   transform: scale(1.1);
@@ -45,6 +45,15 @@ body {
 #newComment:focus {
   border-bottom: 2px solid red; }
 
+.newcart__pay:hover {
+  background-color: #fffc7f;
+  color: black;
+  border: 2px solid black; }
+  .newcart__pay:hover::before {
+    content: "Ver Carrito"; }
+  .newcart__pay:hover span {
+    display: none; }
+
 .container__textarea--none {
   resize: none; }
 
@@ -57,7 +66,7 @@ body {
   color: #000; }
 
 .totalizadorP {
-  background: grey;
+  background: lightgreen;
   margin: 10px;
   padding: 20px;
   border-radius: 20px;
@@ -65,7 +74,7 @@ body {
 
 .filacaja {
   display: flex;
-  background-color: aqua;
+  background-color: #fff;
   margin: 10px;
   height: 200px;
   border-radius: 20px;
@@ -156,6 +165,18 @@ body {
   letter-spacing: 2px;
   border: 0px;
   transition: transform 0.2s ease; }
+
+.newcart__pay {
+  color: #fff;
+  background-color: #f6931f;
+  border-radius: 10px;
+  width: 120px;
+  height: 40px;
+  border: none;
+  position: relative;
+  left: 43%;
+  top: 43%;
+  margin-bottom: 15px; }
 
 /*Container para el formulario de contacto*/
 .container {
