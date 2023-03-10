@@ -251,12 +251,16 @@ function neto(){
 
 function abrirPopup() {
     var popup = document.getElementById("popup");
+    popup.classList.add("animate__fadeInUp");
+    popup.classList.remove("animate__fadeOutDown");
     popup.style.display = "block";
   }
 
   function cerrarPopup() {
     var popup = document.getElementById("popup");
-    popup.style.display = "none";
+    popup.classList.add("animate__fadeOutDown");
+    popup.classList.remove("animate__fadeInUp");
+    // popup.style.display = "none";
   }
 
 cargar(carro);
