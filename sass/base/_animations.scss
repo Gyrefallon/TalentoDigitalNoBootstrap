@@ -47,6 +47,7 @@
   }
 
 .newcart__pay:hover{
+    transform: scale(1.2);
     background-color: $colorYellow;
     color:$colorBlack;
     border: 2px solid $colorBlack;

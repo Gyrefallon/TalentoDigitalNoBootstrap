@@ -119,10 +119,9 @@ window.onload=function(){
 }
 
 function payUp(){
-    if(localStorage.productCount > 0 && localStorage.shoppingTotal>0){
-        localStorage.clear();
-        document.getElementById("productCount").innerHTML = 0;
-        document.getElementById("shoppingTotal").innerHTML = 0;
+    if(carro.cantidad > 0){
+        neto();
+        carro.cantidad = 0
         alert("Has pagado satisfactoriamente");
     }
     else{
@@ -184,7 +183,7 @@ function sumar(event){
 
     var cuadro = buscaItem.cuadro;
     let cantidadAdd = document.querySelector("input#"+cuadro).value;
-
+    let cant = document.getElementById("productCount");
     buscaItem.cantidad = Number(cantidadAdd);
 
     var Total= document.getElementById("totalUni");
@@ -194,15 +193,20 @@ function sumar(event){
     carro[posicion].cantidad = Number(cantidadAdd);
     tProduct = carro[posicion].precio * Number(cantidadAdd);
     Total.innerHTML = "Total de este producto $ " + tProduct;
-
+    var suma = 0;
+    for(var i = 0 ; i < carro.length; i++){
+        suma += carro[i].cantidad;
+    }
+    cant.innerHTML = "Cantidad de Productos: " + suma;
     cargar(carro);
     // let cantidadAdd = document.querySelector("input.cantidad").value;
 
 }
 function restar(event){
     var id = event.id;
-    var buscaItem = carro.find(carro => carro.codigo =id);//recuerda, esto es un objeto
+    var buscaItem = carro.find(carro => carro.codigo === id);//recuerda, esto es un objeto
     var cuadro = buscaItem.cuadro;
+    let cant = document.getElementById("productCount");
     let cantidadAdd = document.querySelector("input#"+cuadro).value;
     buscaItem.cantidad = Number(cantidadAdd);
     var Total= document.getElementById("totalUni");
@@ -211,6 +215,11 @@ function restar(event){
     carro[posicion].cantidad = Number(cantidadAdd);
     tProduct = carro[posicion].precio * Number(cantidadAdd);
     Total.innerHTML = "Total de este producto $ " + tProduct;
+    var suma = 0;
+    for(var i = 0 ; i < carro.length; i++){
+        suma += carro[i].cantidad;
+    }
+    cant.innerHTML = "Cantidad de Productos: " +  suma;
     cargar(carro);
     
     // let cantidadAdd = document.querySelector("input.cantidad").value;
@@ -244,7 +253,7 @@ function neto(){
             despacho = 0;
         }
         let total = document.getElementById("valorTotal");
-        total.innerHTML = "Total + Impuestos: $"+ (suma+despacho+bIva);
+        total.innerHTML = " $"+(suma+despacho+bIva);
         cargar(carro);
         console.log(carro)
     }
