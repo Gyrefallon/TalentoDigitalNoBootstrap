@@ -197,7 +197,7 @@
             <!-- Fin Galeria flotante de productos -->
 <!-- Caja carrito de compras -->
 <button onclick="abrirPopup()" class="newcart__pay"><span>Carro</span></button>
-    <div class="cart popup animate__animated animate__fadeInUp" id="popup">
+    <div class="cart popup animate__fadeInUp animate__animated" id="popup">
       <button class="grid__btn--close" onclick="cerrarPopup()"><span>Cerrar</span></button>
       <div class="totalizadorP">
 
@@ -225,23 +225,31 @@
 
       <!--<button class="cart__reset" onclick="resetCart()">Limpiar Carrito</button>-->
     </div>
-      <div id="popup__2" class="popup__2">
-        <form>
+      <div id="popup__2" class="popup__2 animate__animated">
+        <form id="despachoForm">
         <div class="form-group">
         <h2>Favor de colocar su direccion</h2>
         <label for="direccion">Direccion</label>
-        <input type="text" name="direccion">
+        <input type="text" name="direccion" id="direccion">
         <label for="comuna">Comuna</label>
-        <input type="text" name="comuna" id="">
+        <input type="text" name="comuna" id="comuna">
         <label for="region">Región</label>
-        <input type="text" name="region">
+        <input type="text" name="region" id="region">
         <label for="nombreC">Nombre completo</label>
-        <input type="text" name="nombreC">
+        <input type="text" name="nombreC" id="nombreC">
         </div>
-        <button type="button" class="grid__btn--form" onclick="generarBoleta()">Enviar</button>
+        <button type="button" class="grid__btn--form" onclick="enviarDir()">Enviar</button>
         </form>
     </div>
-
+    <div class="popup__3" id="popup__3">
+      <h2>Para confirmar su compra, coloque su email.</h2>
+      <form action="" id="correoForm">
+        <label for="correo">Su correo</label>
+        <input type="email" name="correo" id="correo">
+        <button type="button" class="grid__btn--form" onclick="enviarCorreo()">Confirmar compra</button>
+      </form>
+    </div>
+    <!-- generarBoleta() -->
 <!--Bloque pie de páquina--> 
 <footer class="footer">
   <!--elemento 1-->

@@ -134,7 +134,7 @@ body {
   width: 1000px;
   height: 500px;
   margin: 0 auto;
-  background-color: white;
+  background-color: #fff;
   border: 1px solid black;
   padding: 20px;
   display: none;
@@ -149,7 +149,22 @@ body {
   width: 800px;
   height: 450px;
   margin: 0 auto;
-  background-color: white;
+  background-color: #fff;
+  border: 1px solid black;
+  padding: 20px;
+  display: none;
+  overflow-y: scroll;
+  border-color: #aaa; }
+
+.popup__3 {
+  position: fixed;
+  top: 20%;
+  bottom: 75%;
+  left: 23%;
+  width: 800px;
+  height: 450px;
+  margin: 0 auto;
+  background-color: #fff;
   border: 1px solid black;
   padding: 20px;
   display: none;

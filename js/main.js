@@ -3,6 +3,7 @@ let iva = 0;
 let valorNeto=0;
 let despacho = 0;
 const { jsPDF } = jspdf;
+let envio=[]
 let bodega =[
     {cantidad:0, cuadro:"A", nombre:"Organizador_de_oficina", codigo:"P001", descripcion:"Organizador colgante de oficina con 4 contenedores.", precio:15000, imagen:"../img/gallery/0eae610c59a2d3a723dcd36b1ecba6f2 (1).jpg"},
     {cantidad:0, cuadro:"B", nombre:"Lámpara_metal_colgante", codigo:"P002", descripcion:"Lámpara de láminas de metal con aberturas.", precio:100000, imagen:"../img/gallery/decoracion-con-cosas-recicladas-lamparas.jpg"},
@@ -227,7 +228,6 @@ function eliminar(indice){
     neto();
     cargar(carro);
     let suma = 0;
-    console.log(carro);
     let cant = document.getElementById("productCount");
     for(var i = 0 ; i < carro.length; i++){
         suma += carro[i].cantidad;
@@ -261,7 +261,6 @@ function neto(){
         total.innerHTML = " $"+(suma+despachoV+bIva);
         todo = suma+bIva+despachoV;
         cargar(carro);
-        console.log(despacho);
     }
 
 
@@ -315,34 +314,103 @@ function generarBoleta(){
         doc.setFont("","","normal");
         var totalProducto = dato.cantidad * dato.precio;
         iva = iva + dato.precio * 0.19;
-        console.log(iva);
         valorNeto = valorNeto + dato.precio;
-        console.log(valorNeto);
         doc.text(posX, posY, dato.nombre.split("_").join(" "));
         doc.text(posX + 90, posY, "x " + dato.cantidad.toString());
         doc.text(posX + 70, posY, "$" + dato.precio.toString());
         doc.text(posX + 120, posY, dato.codigo.toString());
         doc.text(posX + 170, posY, "$" + totalProducto.toString());
         posY += 10;
-        console.log(despacho);
 
     });
     posY+=10;
-    
     doc.text(posX,posY,"Total neto $"+ valorNeto.toString());
     doc.text(posX,posY+10,"Total despacho $" + despacho.toString());
     doc.text(posX,posY+20,"Total IVA $"+iva.toString());
     doc.text(posX, posY+30, "Total $"+ todo.toString());
+    doc.text(posX, posY+60,"Se enviará a la siguiente direccion: ");
+    doc.text(posX, posY+70, "Direccion: "+envio[0]);
+    doc.text(posX, posY+80, "Comuna: "+envio[1]);
+    doc.text(posX, posY+90, "Región: "+envio[2]);
+    doc.text(posX, posY+100, "Nombre Completo: "+envio[3]);
+
     doc.save("boleta.pdf");
 }
-// function abrirPopup2() {
 
-//     var popup = document.getElementById("popup__2");
-//     popup.classList.add("animate__fadeInUp");
-//     popup.classList.remove("animate__fadeOutDown");
-//     popup.style.display = "block";
-//   }
+function enviarDir(){
+    let direccion = document.getElementById("direccion");
+    let comuna = document.getElementById("comuna");
+    let region = document.getElementById("region");
+    let nombre = document.getElementById("nombreC");
+    let verificar = true;
+    let expRegNombre= /^([a-z ñáéíóú]{2,60})$/i;
+    if(!nombre.value){
+        alert("El campo nombre es requerido");
+        nombre.focus();
+        verificar=false;
+    }else if(!expRegNombre.exec(nombre.value)){
+        alert("El campo nombre solo acepta letras");
+        nombre.focus();
+        verificar=false;
+    }else if(!direccion.value){
+        alert("El campo direccion es requerido");
+        direccion.focus();
+        verificar=false;
+    }else if(!comuna.value){
+        alert("El campo comuna es requerido");
+        comuna.focus();
+        verificar=false;
+    }else if(!region.value){
+        alert("El campo region es requerido");
+        region.focus();
+        verificar=false;
+    }
+    if(verificar){
+        envio.push(direccion.value, comuna.value, region.value,nombre.value);
+        alert("Todo bien");
+        eraseForm();
+        cerrarPopup2();
+        abrirPopup2();
+        }
+}
+function eraseForm(){
+    document.getElementById("despachoForm").reset();
+}
 
+function cerrarPopup2() {
+    var popup = document.getElementById("popup__2");
+    popup.classList.add("animate__fadeOutDown");
+    popup.style.display = "none";
+  }
+
+function abrirPopup2(){
+    var popup = document.getElementById("popup__3");
+    popup.style.display="flex";
+  }
+
+function enviarCorreo(){
+
+    var verificar = true;
+    var expRegEmail =  /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,4})+$/;
+    var email = document.getElementById("correo");
+    if(!email.value){
+        alert("El campo email es requerido");
+        email.focus();
+        verificar=false;
+    }else if(!expRegEmail.exec(email.value)){
+        alert("El campo email no es válido");
+        email.focus();
+        verificar=false;
+    }if(verificar){
+        alert("se va a descargar una copia de la boleta y se va a enviar otra copia de la boleta al correo!");
+        cerrarPopup3();
+        generarBoleta();
+        }
+}
+function cerrarPopup3(){
+    var popup = document.getElementById("popup__3");
+    popup.style.display="none";
+}
 cargar(carro);
 
 //All good
