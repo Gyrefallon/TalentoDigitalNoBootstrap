@@ -58,4 +58,17 @@
         display: none;
     }
 }
+
+.grid__btn--close:hover{
+    background: $colorDelete;
+    span{
+        display: none;
+    }
+    &::before{
+        content: "X";
+        font-weight: bolder;
+        font-size: large;
+    }
+    
+}
 // nueva animacion de popup de carro

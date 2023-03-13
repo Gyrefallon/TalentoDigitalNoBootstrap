@@ -254,7 +254,6 @@ function neto(){
         let total = document.getElementById("valorTotal");
         total.innerHTML = " $"+(suma+despacho+bIva);
         cargar(carro);
-        console.log(carro)
     }
 
 function abrirPopup() {
@@ -268,7 +267,7 @@ function abrirPopup() {
     var popup = document.getElementById("popup");
     popup.classList.add("animate__fadeOutDown");
     popup.classList.remove("animate__fadeInUp");
-    // popup.style.display = "none";
+    popup.style.display = "none";
   }
 
   function payUp(){
@@ -277,14 +276,22 @@ function abrirPopup() {
         suma += carro[i].cantidad;
     }
     if(suma > 0){
-        alert("Has pagado satisfactoriamente");
-        cargar(carro);
-        neto();
+        cerrarPopup();
+        let form = document.getElementById("popup__2");
+        form.style.display="flex";
     }
     else{
         alert("No hay articulos en su carro")
     }
 }
+
+// function abrirPopup2() {
+
+//     var popup = document.getElementById("popup__2");
+//     popup.classList.add("animate__fadeInUp");
+//     popup.classList.remove("animate__fadeOutDown");
+//     popup.style.display = "block";
+//   }
 
 cargar(carro);
 

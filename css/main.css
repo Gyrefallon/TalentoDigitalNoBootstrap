@@ -55,6 +55,15 @@ body {
   .newcart__pay:hover span {
     display: none; }
 
+.grid__btn--close:hover {
+  background: #DA4D2E; }
+  .grid__btn--close:hover span {
+    display: none; }
+  .grid__btn--close:hover::before {
+    content: "X";
+    font-weight: bolder;
+    font-size: large; }
+
 .container__textarea--none {
   resize: none; }
 
@@ -124,6 +133,21 @@ body {
   left: 10%;
   width: 1000px;
   height: 500px;
+  margin: 0 auto;
+  background-color: white;
+  border: 1px solid black;
+  padding: 20px;
+  display: none;
+  overflow-y: scroll;
+  border-color: #aaa; }
+
+.popup__2 {
+  position: fixed;
+  top: 20%;
+  bottom: 75%;
+  left: 23%;
+  width: 800px;
+  height: 450px;
   margin: 0 auto;
   background-color: white;
   border: 1px solid black;
@@ -215,6 +239,22 @@ body {
   letter-spacing: 2px;
   border: 0px; }
 
+.grid__btn--form {
+  margin: 20px;
+  padding: 3px 21px;
+  width: 120px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #f6931f;
+  color: #fff;
+  font-size: 12px;
+  font-family: Questrial;
+  text-decoration: none;
+  vertical-align: middle;
+  letter-spacing: 2px;
+  border: 0px;
+  transition: transform 0.2s ease; }
+
 /*Container para el formulario de contacto*/
 .container {
   max-width: 400px;
@@ -284,6 +324,13 @@ body {
   min-width: 100%;
   padding: 0;
   width: 100%; }
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; }
+  .form-group label {
+    pointer-events: none; }
 
 .comment {
   background-color: rgba(255, 255, 255, 0.7);
