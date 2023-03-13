@@ -1,3 +1,8 @@
+let todo = 0;
+let iva = 0;
+let valorNeto=0;
+let despacho = 0;
+const { jsPDF } = jspdf;
 let bodega =[
     {cantidad:0, cuadro:"A", nombre:"Organizador_de_oficina", codigo:"P001", descripcion:"Organizador colgante de oficina con 4 contenedores.", precio:15000, imagen:"../img/gallery/0eae610c59a2d3a723dcd36b1ecba6f2 (1).jpg"},
     {cantidad:0, cuadro:"B", nombre:"Lámpara_metal_colgante", codigo:"P002", descripcion:"Lámpara de láminas de metal con aberturas.", precio:100000, imagen:"../img/gallery/decoracion-con-cosas-recicladas-lamparas.jpg"},
@@ -242,19 +247,23 @@ function neto(){
         let iva = document.getElementById("valorIva");
         let bIva = suma * 0.19
         iva.innerHTML = "Valor IVA: "+ bIva;
-        let despacho = document.getElementById("valorDespacho")
+        let despachoV = document.getElementById("valorDespacho")
         if ((suma+bIva) < 100000){
             var valor=suma*0.05
-            despacho.innerHTML = "Total despacho: $"+ (valor);
-            despacho = valor
+            despachoV.innerHTML = "Total despacho: $"+ (valor);
+            despachoV = valor;
+            despacho = valor;
         }else{
-            despacho.innerHTML = "Total despacho: GRATIS";
-            despacho = 0;
+            despachoV.innerHTML = "Total despacho: GRATIS";
+            despachoV = 0;
         }
         let total = document.getElementById("valorTotal");
-        total.innerHTML = " $"+(suma+despacho+bIva);
+        total.innerHTML = " $"+(suma+despachoV+bIva);
+        todo = suma+bIva+despachoV;
         cargar(carro);
+        console.log(despacho);
     }
+
 
 function abrirPopup() {
     var popup = document.getElementById("popup");
@@ -272,19 +281,60 @@ function abrirPopup() {
 
   function payUp(){
     var suma = 0;
+    let avisador = 1;
     for(var i = 0 ; i < carro.length; i++){
         suma += carro[i].cantidad;
-    }
-    if(suma > 0){
+        if (carro[i].cantidad == 0){
+            alert("El producto "+carro[i].nombre.split("_").join(" ") +" no ha sido añadido");
+            avisador=0;
+        }}
+    if(suma > 0 && avisador == 1){
         cerrarPopup();
         let form = document.getElementById("popup__2");
         form.style.display="flex";
     }
-    else{
+    else if(suma == 0 && avisador == 0){{
         alert("No hay articulos en su carro")
-    }
+    }}
 }
+function generarBoleta(){
+    var doc = new jsPDF();
+    var posX= 10;
+    var posY= 10;
+    doc.setFont("times","","bold")
+    doc.text(posX, posY, "Boleta de compra");
+    posY+=10;
+    doc.text(posX,posY,"Nombre del producto");
+    doc.text(posX+90,posY,"Cantidad");
+    doc.text(posX+70,posY,"Precio");
+    doc.text(posX+150,posY,"Total Producto");
+    doc.text(posX+120,posY,"Codigo");
+    posY+=10;
 
+    carro.forEach(function(dato)  {
+        doc.setFont("","","normal");
+        var totalProducto = dato.cantidad * dato.precio;
+        iva = iva + dato.precio * 0.19;
+        console.log(iva);
+        valorNeto = valorNeto + dato.precio;
+        console.log(valorNeto);
+        doc.text(posX, posY, dato.nombre.split("_").join(" "));
+        doc.text(posX + 90, posY, "x " + dato.cantidad.toString());
+        doc.text(posX + 70, posY, "$" + dato.precio.toString());
+        doc.text(posX + 120, posY, dato.codigo.toString());
+        doc.text(posX + 170, posY, "$" + totalProducto.toString());
+        posY += 10;
+        console.log(despacho);
+
+    });
+    posY+=10;
+    
+    doc.text(posX,posY,"Total neto $"+ valorNeto.toString());
+    doc.text(posX,posY+10,"Total despacho $" + despacho.toString());
+    doc.text(posX,posY+20,"Total IVA $"+iva.toString());
+    doc.text(posX, posY+30, "Total $"+ todo.toString());
+    doc.save("boleta.pdf");
+}
 // function abrirPopup2() {
 
 //     var popup = document.getElementById("popup__2");
