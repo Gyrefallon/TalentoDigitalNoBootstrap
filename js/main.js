@@ -389,6 +389,9 @@ function generarBoleta(){
           to: envio[4],
           from_name: 'Gonzalo',
           html: contenidoHTML,
+          headers: {
+            'Content-Type': 'text/html; charset=utf-8'
+        }
      };
       
         // Enviar correo electrónico con EmailJS
