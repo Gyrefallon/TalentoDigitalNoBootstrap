@@ -3,7 +3,6 @@ let iva = 0;
 let valorNeto=0;
 let despacho = 0;
 const { jsPDF } = jspdf;
-
 let envio=[]
 let bodega =[
     {cantidad:0, cuadro:"A", nombre:"Organizador_de_oficina", codigo:"P001", descripcion:"Organizador colgante de oficina con 4 contenedores.", precio:15000, imagen:"../img/gallery/0eae610c59a2d3a723dcd36b1ecba6f2 (1).jpg"},
@@ -25,7 +24,6 @@ document.getElementById("number").addEventListener("keydown", e => e.keyCode != 
     const valueInput = document.getElementById("text"); //Selecciona todos los elementos con la ID especificada.
     input.addEventListener('change',numbers);//el addEventListener recibe dos parametros toma el evento change  y lo pone a escuchar,
 //y un segundo argumento para llamar cada vez que se desencadena el evento descrito.
-
 
 function numbers(number){
     if ((number.target.value>0) && (number.target.value<=3)){ //si el valor de la etiqueta es mayor a 0 y es menor o igual a 3 entonces:
@@ -82,15 +80,12 @@ function limpiarForm(){
 }
 
 function validarForm(){
-
     var verificar = true;
     var expRegNombre= /^([a-z ñáéíóú]{2,60})$/i;
 	var expRegEmail =  /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,4})+$/;
-
     var nombre = document.getElementById("nombre");
     var email = document.getElementById("email");
     var comentarios = document.getElementById("comentarios");
-
     if(!nombre.value){
         alert("El campo nombre es requerido");
         nombre.focus();
@@ -117,16 +112,11 @@ function validarForm(){
         }
 }
 
-
 window.onload=function(){
     var botonEnviar;
     botonEnviar = document.getElementById("enviar");
     botonEnviar.onclick= validarForm,limpiarForm()
-
 }
-
-
-
 
 //Funcion de carro nuevo
 
@@ -162,7 +152,6 @@ function agregar(event) {
         // observar si es necesario cambiar las funciones a find
         // let cantidadAdd = document.querySelector("input.cantidad").value;
         let stock = Number(event.getAttribute('data-product'));
-
         carro.push(bodega[stock]);
         // let ultimaPosicion = carro.length -1;
         // console.log(ultimaPosicion);
@@ -176,14 +165,11 @@ function agregar(event) {
 }
 function sumar(event){
     var id = event.id;
-
     var buscaItem = carro.find(carro => carro.codigo === id);//recuerda, esto es un objeto
-
     var cuadro = buscaItem.cuadro;
     let cantidadAdd = document.querySelector("input#"+cuadro).value;
     let cant = document.getElementById("productCount");
     buscaItem.cantidad = Number(cantidadAdd);
-
     var Total= document.getElementById("totalUni");
     var posicion = carro.indexOf(buscaItem);
     carro[posicion].cantidad = Number(cantidadAdd);
@@ -195,7 +181,6 @@ function sumar(event){
     }
     cant.innerHTML = suma;
     cargar(carro);
-
 }
 function restar(event){
     var id = event.id;
@@ -329,7 +314,6 @@ function generarBoleta(){
     doc.text(posX, posY+100, "Nombre Completo: "+envio[3]);
     doc.text(posX,posY+110, "Correo electrónico: "+envio[4]);
     doc.save("boleta.pdf");
-
         // Generar contenido HTML con el mismo formato que el PDF generado con jsPDF
         var contenidoHTML = `
         <html>
@@ -396,7 +380,6 @@ function generarBoleta(){
           });
       }
 
-
 function enviarDir(){
     let direccion = document.getElementById("direccion");
     let comuna = document.getElementById("comuna");
@@ -450,7 +433,6 @@ function abrirPopup2(){
   }
 
 function enviarCorreo(){
-
     var verificar = true;
     var expRegEmail =  /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,4})+$/;
     var email = document.getElementById("correo");
