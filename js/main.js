@@ -257,6 +257,7 @@ function neto(){
         }else{
             despachoV.innerHTML = "Total despacho: GRATIS";
             despachoV = 0;
+            despacho = 0;
         }
         let total = document.getElementById("valorTotal");
         total.innerHTML = " $"+(suma+despachoV+bIva);
@@ -298,49 +299,44 @@ function abrirPopup() {
     }}
 }
 function generarBoleta(){
-    var doc = new jsPDF();
-    var posX= 10;
-    var posY= 10;
-    doc.setFont("times","","bold")
-    doc.text(posX, posY, "Boleta de compra");
-    posY+=10;
-    doc.text(posX,posY,"Nombre del producto");
-    doc.text(posX+90,posY,"Cantidad");
-    doc.text(posX+70,posY,"Precio");
-    doc.text(posX+150,posY,"Total Producto");
-    doc.text(posX+120,posY,"Codigo");
-    posY+=10;
+    // var doc = new jsPDF();
+    // var posX= 10;
+    // var posY= 10;
+    // doc.setFont("times","","bold")
+    // doc.text(posX, posY, "Boleta de compra");
+    // posY+=10;
+    // doc.text(posX,posY,"Nombre del producto");
+    // doc.text(posX+90,posY,"Cantidad");
+    // doc.text(posX+70,posY,"Precio");
+    // doc.text(posX+150,posY,"Total Producto");
+    // doc.text(posX+120,posY,"Codigo");
+    // posY+=10;
 
-    carro.forEach(function(dato)  {
-        doc.setFont("","","normal");
-        var totalProducto = dato.cantidad * dato.precio;
-        iva = iva + dato.precio * 0.19;
-        valorNeto = valorNeto + dato.precio;
-        doc.text(posX, posY, dato.nombre.split("_").join(" "));
-        doc.text(posX + 90, posY, "x " + dato.cantidad.toString());
-        doc.text(posX + 70, posY, "$" + dato.precio.toString());
-        doc.text(posX + 120, posY, dato.codigo.toString());
-        doc.text(posX + 170, posY, "$" + totalProducto.toString());
-        posY += 10;
+    // carro.forEach(function(dato)  {
+    //     doc.setFont("","","normal");
+    //     var totalProducto = dato.cantidad * dato.precio;
+    //     iva = iva + dato.precio * 0.19;
+    //     valorNeto = valorNeto + dato.precio;
+    //     doc.text(posX, posY, dato.nombre.split("_").join(" "));
+    //     doc.text(posX + 90, posY, "x " + dato.cantidad.toString());
+    //     doc.text(posX + 70, posY, "$" + dato.precio.toString());
+    //     doc.text(posX + 120, posY, dato.codigo.toString());
+    //     doc.text(posX + 170, posY, "$" + totalProducto.toString());
+    //     posY += 10;
 
-    });
-    posY+=10;
-    doc.text(posX,posY,"Total neto $"+ valorNeto.toString());
-    doc.text(posX,posY+10,"Total despacho $" + despacho.toString());
-    doc.text(posX,posY+20,"Total IVA $"+iva.toString());
-    doc.text(posX, posY+30, "Total $"+ todo.toString());
-    doc.text(posX, posY+60,"Se enviará a la siguiente direccion: ");
-    doc.text(posX, posY+70, "Direccion: "+envio[0]);
-    doc.text(posX, posY+80, "Comuna: "+envio[1]);
-    doc.text(posX, posY+90, "Región: "+envio[2]);
-    doc.text(posX, posY+100, "Nombre Completo: "+envio[3]);
-    doc.text(posX,posY+110, "Correo electrónico: "+envio[4]);
+    // });
+    // posY+=10;
+    // doc.text(posX,posY,"Total neto $"+ valorNeto.toString());
+    // doc.text(posX,posY+10,"Total despacho $" + despacho.toString());
+    // doc.text(posX,posY+20,"Total IVA $"+iva.toString());
+    // doc.text(posX, posY+30, "Total $"+ todo.toString());
+    // doc.text(posX, posY+60,"Se enviará a la siguiente direccion: ");
+    // doc.text(posX, posY+70, "Direccion: "+envio[0]);
+    // doc.text(posX, posY+80, "Comuna: "+envio[1]);
+    // doc.text(posX, posY+90, "Región: "+envio[2]);
+    // doc.text(posX, posY+100, "Nombre Completo: "+envio[3]);
+    // doc.text(posX,posY+110, "Correo electrónico: "+envio[4]);
 
-    var pdfContent = doc.output("datauristring").split(",")[1];
-    var pdfContentText = atob(pdfContent);
-    var service_id = "service_yi6hmpg";
-    var template_id = "template_wv734ok";
-    var user_id = "EDXDtHkqoshD99lJP";
     var htmlContent = `
     <html>
     <body>
@@ -389,56 +385,11 @@ function generarBoleta(){
     `;
     
     var params = {
-      to_email: envio[4],
+      to_email: "gonzalo.2800@hotmail.com",
       from_name: "GmailPeque",
       reply_to: "rodrigo.pequeno.24@gmail.com",
       message: "Gracias por tu compra :D",
-      html: `
-      <html>
-      <body>
-        <h1>Boleta de compra</h1>
-        <table>
-          <thead>
-            <tr>
-              <th>Nombre del producto</th>
-              <th>Cantidad</th>
-              <th>Precio</th>
-              <th>Codigo</th>
-              <th>Total Producto</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${carro.map(function(dato) {
-              var totalProducto = dato.cantidad * dato.precio;
-              iva = iva + dato.precio * 0.19;
-              valorNeto = valorNeto + dato.precio;
-              return `
-                <tr>
-                  <td>${dato.nombre.split("_").join(" ")}</td>
-                  <td>x ${dato.cantidad.toString()}</td>
-                  <td>$${dato.precio.toString()}</td>
-                  <td>${dato.codigo.toString()}</td>
-                  <td>$${totalProducto.toString()}</td>
-                </tr>
-              `;
-            }).join('')}
-          </tbody>
-        </table>
-        <p>Total neto: $${valorNeto.toString()}</p>
-        <p>Total despacho: $${despacho.toString()}</p>
-        <p>Total IVA: $${iva.toString()}</p>
-        <p>Total: $${todo.toString()}</p>
-        <p>Se enviará a la siguiente dirección:</p>
-        <ul>
-          <li>Dirección: ${envio[0]}</li>
-          <li>Comuna: ${envio[1]}</li>
-          <li>Región: ${envio[2]}</li>
-          <li>Nombre Completo: ${envio[3]}</li>
-          <li>Correo electrónico: ${envio[4]}</li>
-        </ul>
-        </body>
-        </html>
-      `
+      html:htmlContent,
     };
     
     emailjs.send("Ilustronco_Front", "template_gd7smmr", params, "4w2yN-rQx9JsW9yTM").then(
@@ -449,6 +400,7 @@ function generarBoleta(){
         console.log("FAILED", error);
       }
     );
+    console.log(htmlContent);
     // doc.save("boleta.pdf");
 }
 function enviarDir(){
