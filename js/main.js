@@ -3,6 +3,7 @@ let iva = 0;
 let valorNeto=0;
 let despacho = 0;
 const { jsPDF } = jspdf;
+
 let envio=[]
 let bodega =[
     {cantidad:0, cuadro:"A", nombre:"Organizador_de_oficina", codigo:"P001", descripcion:"Organizador colgante de oficina con 4 contenedores.", precio:15000, imagen:"../img/gallery/0eae610c59a2d3a723dcd36b1ecba6f2 (1).jpg"},
@@ -333,10 +334,31 @@ function generarBoleta(){
     doc.text(posX, posY+80, "Comuna: "+envio[1]);
     doc.text(posX, posY+90, "Región: "+envio[2]);
     doc.text(posX, posY+100, "Nombre Completo: "+envio[3]);
+    doc.text(posX,posY+110, "Correo electrónico: "+envio[4]);
 
-    doc.save("boleta.pdf");
+    var pdfContent = doc.output("datauristring").split(",")[1];
+    var pdfContentText = atob(pdfContent);
+    var service_id = "service_yi6hmpg";
+    var template_id = "template_wv734ok";
+    var user_id = "EDXDtHkqoshD99lJP";
+    
+    var params = {
+      to_email: envio[4],
+      from_name: "Your Name",
+      reply_to: "gonzalo.2800@gmail.com",
+      message: pdfContent,
+      attachment: pdfContent,
+    };
+    
+    emailjs.send(service_id, template_id, params, user_id).then(
+      function (response) {
+        console.log("SUCCESS", response);
+      },
+      function (error) {
+        console.log("FAILED", error);
+      }
+    );
 }
-
 function enviarDir(){
     let direccion = document.getElementById("direccion");
     let comuna = document.getElementById("comuna");
@@ -373,6 +395,7 @@ function enviarDir(){
         abrirPopup2();
         }
 }
+
 function eraseForm(){
     document.getElementById("despachoForm").reset();
 }
@@ -402,9 +425,11 @@ function enviarCorreo(){
         email.focus();
         verificar=false;
     }if(verificar){
-        alert("se va a descargar una copia de la boleta y se va a enviar otra copia de la boleta al correo!");
+        alert("Se va a descargar una copia de la boleta y se va a enviar otra copia de la boleta al correo!");
+        envio.push(email.value);
         cerrarPopup3();
         generarBoleta();
+
         }
 }
 function cerrarPopup3(){
