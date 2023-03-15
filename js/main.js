@@ -185,9 +185,7 @@ function sumar(event){
     buscaItem.cantidad = Number(cantidadAdd);
 
     var Total= document.getElementById("totalUni");
-    // tProduct = cantidadAdd * buscaItem.precio;
     var posicion = carro.indexOf(buscaItem);
-
     carro[posicion].cantidad = Number(cantidadAdd);
     tProduct = carro[posicion].precio * Number(cantidadAdd);
     Total.innerHTML = "Total de este producto $ " + tProduct;
@@ -197,7 +195,6 @@ function sumar(event){
     }
     cant.innerHTML = suma;
     cargar(carro);
-    // let cantidadAdd = document.querySelector("input.cantidad").value;
 
 }
 function restar(event){
@@ -220,8 +217,6 @@ function restar(event){
     cant.innerHTML = suma;
     cargar(carro);
     
-    // let cantidadAdd = document.querySelector("input.cantidad").value;
-
 }
 function eliminar(indice){
     carro[indice].cantidad=0;
@@ -236,7 +231,6 @@ function eliminar(indice){
     cant.innerHTML = suma;
 
 }
-
 
 function neto(){
         var suma = 0;
@@ -265,7 +259,6 @@ function neto(){
         cargar(carro);
     }
 
-
 function abrirPopup() {
     var popup = document.getElementById("popup");
     popup.classList.add("animate__fadeInUp");
@@ -280,7 +273,7 @@ function abrirPopup() {
     popup.style.display = "none";
   }
 
-  function payUp(){
+function payUp(){
     var suma = 0;
     let avisador = 1;
     for(var i = 0 ; i < carro.length; i++){
@@ -300,42 +293,42 @@ function abrirPopup() {
 }
 
 function generarBoleta(){
-    // var doc = new jsPDF();
-    // var posX= 10;
-    // var posY= 10;
-    // doc.setFont("times","","bold")
-    // doc.text(posX, posY, "Boleta de compra");
-    // posY+=10;
-    // doc.text(posX,posY,"Nombre del producto");
-    // doc.text(posX+90,posY,"Cantidad");
-    // doc.text(posX+70,posY,"Precio");
-    // doc.text(posX+150,posY,"Total Producto");
-    // doc.text(posX+120,posY,"Codigo");
-    // posY+=10;
-    // carro.forEach(function(dato)  {
-    //     doc.setFont("","","normal");
-    //     var totalProducto = dato.cantidad * dato.precio;
-    //     iva = iva + dato.precio * 0.19;
-    //     valorNeto = valorNeto + dato.precio;
-    //     doc.text(posX, posY, dato.nombre.split("_").join(" "));
-    //     doc.text(posX + 90, posY, "x " + dato.cantidad.toString());
-    //     doc.text(posX + 70, posY, "$" + dato.precio.toString());
-    //     doc.text(posX + 120, posY, dato.codigo.toString());
-    //     doc.text(posX + 170, posY, "$" + totalProducto.toString());
-    //     posY += 10;
-    // });
-    // posY+=10;
-    // doc.text(posX,posY,"Total neto $"+ valorNeto.toString());
-    // doc.text(posX,posY+10,"Total despacho $" + despacho.toString());
-    // doc.text(posX,posY+20,"Total IVA $"+iva.toString());
-    // doc.text(posX, posY+30, "Total $"+ todo.toString());
-    // doc.text(posX, posY+60,"Se enviará a la siguiente direccion: ");
-    // doc.text(posX, posY+70, "Direccion: "+envio[0]);
-    // doc.text(posX, posY+80, "Comuna: "+envio[1]);
-    // doc.text(posX, posY+90, "Región: "+envio[2]);
-    // doc.text(posX, posY+100, "Nombre Completo: "+envio[3]);
-    // doc.text(posX,posY+110, "Correo electrónico: "+envio[4]);
-    // doc.save("boleta.pdf");
+    var doc = new jsPDF();
+    var posX= 10;
+    var posY= 10;
+    doc.setFont("times","","bold")
+    doc.text(posX, posY, "Boleta de compra");
+    posY+=10;
+    doc.text(posX,posY,"Nombre del producto");
+    doc.text(posX+90,posY,"Cantidad");
+    doc.text(posX+70,posY,"Precio");
+    doc.text(posX+150,posY,"Total Producto");
+    doc.text(posX+120,posY,"Codigo");
+    posY+=10;
+    carro.forEach(function(dato)  {
+        doc.setFont("","","normal");
+        var totalProducto = dato.cantidad * dato.precio;
+        iva = iva + dato.precio * 0.19;
+        valorNeto = valorNeto + dato.precio;
+        doc.text(posX, posY, dato.nombre.split("_").join(" "));
+        doc.text(posX + 90, posY, "x " + dato.cantidad.toString());
+        doc.text(posX + 70, posY, "$" + dato.precio.toString());
+        doc.text(posX + 120, posY, dato.codigo.toString());
+        doc.text(posX + 170, posY, "$" + totalProducto.toString());
+        posY += 10;
+    });
+    posY+=10;
+    doc.text(posX,posY,"Total neto $"+ valorNeto.toString());
+    doc.text(posX,posY+10,"Total despacho $" + despacho.toString());
+    doc.text(posX,posY+20,"Total IVA $"+iva.toString());
+    doc.text(posX, posY+30, "Total $"+ todo.toString());
+    doc.text(posX, posY+60,"Se enviará a la siguiente direccion: ");
+    doc.text(posX, posY+70, "Direccion: "+envio[0]);
+    doc.text(posX, posY+80, "Comuna: "+envio[1]);
+    doc.text(posX, posY+90, "Región: "+envio[2]);
+    doc.text(posX, posY+100, "Nombre Completo: "+envio[3]);
+    doc.text(posX,posY+110, "Correo electrónico: "+envio[4]);
+    doc.save("boleta.pdf");
 
         // Generar contenido HTML con el mismo formato que el PDF generado con jsPDF
         var contenidoHTML = `
