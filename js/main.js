@@ -257,6 +257,7 @@ function neto(){
         }else{
             despachoV.innerHTML = "Total despacho: GRATIS";
             despachoV = 0;
+            despacho = 0;
         }
         let total = document.getElementById("valorTotal");
         total.innerHTML = " $"+(suma+despachoV+bIva);
