@@ -248,7 +248,7 @@ function neto(){
         let iva = document.getElementById("valorIva");
         let bIva = suma * 0.19
         iva.innerHTML = "Valor IVA: "+ bIva;
-        let despachoV = document.getElementById("valorDespacho")
+        let despachoV = document.getElementById("valorDespacho");
         if ((suma+bIva) < 100000){
             var valor=suma*0.05
             despachoV.innerHTML = "Total despacho: $"+ (valor);
@@ -341,16 +341,107 @@ function generarBoleta(){
     var service_id = "service_yi6hmpg";
     var template_id = "template_wv734ok";
     var user_id = "EDXDtHkqoshD99lJP";
+    var htmlContent = `
+    <html>
+    <body>
+      <h1>Boleta de compra</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre del producto</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Codigo</th>
+            <th>Total Producto</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${carro.map(function(dato) {
+            var totalProducto = dato.cantidad * dato.precio;
+            iva = iva + dato.precio * 0.19;
+            valorNeto = valorNeto + dato.precio;
+            return `
+              <tr>
+                <td>${dato.nombre.split("_").join(" ")}</td>
+                <td>x ${dato.cantidad.toString()}</td>
+                <td>$${dato.precio.toString()}</td>
+                <td>${dato.codigo.toString()}</td>
+                <td>$${totalProducto.toString()}</td>
+              </tr>
+            `;
+          }).join('')}
+        </tbody>
+      </table>
+      <p>Total neto: $${valorNeto.toString()}</p>
+      <p>Total despacho: $${despacho.toString()}</p>
+      <p>Total IVA: $${iva.toString()}</p>
+      <p>Total: $${todo.toString()}</p>
+      <p>Se enviará a la siguiente dirección:</p>
+      <ul>
+        <li>Dirección: ${envio[0]}</li>
+        <li>Comuna: ${envio[1]}</li>
+        <li>Región: ${envio[2]}</li>
+        <li>Nombre Completo: ${envio[3]}</li>
+        <li>Correo electrónico: ${envio[4]}</li>
+      </ul>
+      </body>
+      </html>
+    `;
     
     var params = {
       to_email: envio[4],
-      from_name: "Your Name",
-      reply_to: "gonzalo.2800@gmail.com",
-      message: pdfContent,
-      attachment: pdfContent,
+      from_name: "GmailPeque",
+      reply_to: "rodrigo.pequeno.24@gmail.com",
+      message: "Gracias por tu compra :D",
+      html: `
+      <html>
+      <body>
+        <h1>Boleta de compra</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre del producto</th>
+              <th>Cantidad</th>
+              <th>Precio</th>
+              <th>Codigo</th>
+              <th>Total Producto</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${carro.map(function(dato) {
+              var totalProducto = dato.cantidad * dato.precio;
+              iva = iva + dato.precio * 0.19;
+              valorNeto = valorNeto + dato.precio;
+              return `
+                <tr>
+                  <td>${dato.nombre.split("_").join(" ")}</td>
+                  <td>x ${dato.cantidad.toString()}</td>
+                  <td>$${dato.precio.toString()}</td>
+                  <td>${dato.codigo.toString()}</td>
+                  <td>$${totalProducto.toString()}</td>
+                </tr>
+              `;
+            }).join('')}
+          </tbody>
+        </table>
+        <p>Total neto: $${valorNeto.toString()}</p>
+        <p>Total despacho: $${despacho.toString()}</p>
+        <p>Total IVA: $${iva.toString()}</p>
+        <p>Total: $${todo.toString()}</p>
+        <p>Se enviará a la siguiente dirección:</p>
+        <ul>
+          <li>Dirección: ${envio[0]}</li>
+          <li>Comuna: ${envio[1]}</li>
+          <li>Región: ${envio[2]}</li>
+          <li>Nombre Completo: ${envio[3]}</li>
+          <li>Correo electrónico: ${envio[4]}</li>
+        </ul>
+        </body>
+        </html>
+      `
     };
     
-    emailjs.send(service_id, template_id, params, user_id).then(
+    emailjs.send("Ilustronco_Front", "template_gd7smmr", params, "4w2yN-rQx9JsW9yTM").then(
       function (response) {
         console.log("SUCCESS", response);
       },
@@ -358,6 +449,7 @@ function generarBoleta(){
         console.log("FAILED", error);
       }
     );
+    // doc.save("boleta.pdf");
 }
 function enviarDir(){
     let direccion = document.getElementById("direccion");
