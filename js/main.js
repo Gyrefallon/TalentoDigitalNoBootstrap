@@ -386,12 +386,11 @@ function generarBoleta(){
       console.log(contenidoHTML);
         // Configurar los datos del correo electrónico
         var email = {
-          to: envio[4],
-          from_name: 'Gonzalo',
-          html: contenidoHTML,
-          headers: {
-            'Content-Type': 'text/html; charset=utf-8'
-        }
+            to_email: envio[4],
+            from_name: "GmailPeque",
+            reply_to: "rodrigo.pequeno.24@gmail.com",
+            message: "Gracias por tu compra :D",
+            html: contenidoHTML
      };
       
         // Enviar correo electrónico con EmailJS
