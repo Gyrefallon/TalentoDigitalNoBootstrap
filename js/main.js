@@ -19,7 +19,6 @@ let bodega =[
     {cantidad:0, cuadro:"L", nombre:"Basurero", codigo:"P012", descripcion:"Basurero con forma de diamante.", precio:35000, imagen:"../img/gallery/botebasura.jpg"}
 ];
 let carro =[];
-document.getElementById("number").addEventListener("keydown", e => e.keyCode != 38 && e.keyCode != 40 && e.preventDefault()); //El usuario solo puede utlizar las flechas arriba y abajo en el teclado
     const input = document.querySelector("#number"); //Selecciona la etiqueta que tenga un id, aqui por ejemplo está seleccionando a la etiqueta que tenga el ID de numeros
     const valueInput = document.getElementById("text"); //Selecciona todos los elementos con la ID especificada.
     input.addEventListener('change',numbers);//el addEventListener recibe dos parametros toma el evento change  y lo pone a escuchar,
@@ -150,13 +149,8 @@ function agregar(event) {
     var busCarro = carro.find(carro => carro.codigo === id);
     if (busCarro == undefined){
         // observar si es necesario cambiar las funciones a find
-        // let cantidadAdd = document.querySelector("input.cantidad").value;
         let stock = Number(event.getAttribute('data-product'));
         carro.push(bodega[stock]);
-        // let ultimaPosicion = carro.length -1;
-        // console.log(ultimaPosicion);
-        
-        // carro[ultimaPosicion].cantidad = Number(cantidadAdd);
         cargar(carro);
     }else{
         alert("Este producto ya ha sido añadido");
@@ -201,7 +195,6 @@ function restar(event){
     }
     cant.innerHTML = suma;
     cargar(carro);
-    
 }
 function eliminar(indice){
     carro[indice].cantidad=0;
@@ -214,7 +207,6 @@ function eliminar(indice){
         suma += carro[i].cantidad;
     }
     cant.innerHTML = suma;
-
 }
 
 function neto(){
@@ -361,13 +353,12 @@ function generarBoleta(){
           </body>
           </html>
         `;
-      console.log(contenidoHTML);
         // Configurar los datos del correo electrónico
         var email = {
             to_email: envio[4],
-            from_name: "GmailPeque",
+            from_name: "Cachureando.cl",
             reply_to: "rodrigo.pequeno.24@gmail.com",
-            message: "Gracias por tu compra :D",
+            message: "Gracias por tu compra :D, a continuación la boleta de compra: ",
             html: contenidoHTML
      };
       
@@ -410,7 +401,6 @@ function enviarDir(){
     }
     if(verificar){
         envio.push(direccion.value, comuna.value, region.value,nombre.value);
-        alert("Todo bien");
         eraseForm();
         cerrarPopup2();
         abrirPopup2();
