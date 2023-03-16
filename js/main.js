@@ -404,6 +404,7 @@ function enviarDir(){
         eraseForm();
         cerrarPopup2();
         abrirPopup2();
+        console.log(envio);
         }
 }
 
@@ -413,7 +414,6 @@ function eraseForm(){
 
 function cerrarPopup2() {
     var popup = document.getElementById("popup__2");
-    popup.classList.add("animate__fadeOutDown");
     popup.style.display = "none";
   }
 
@@ -437,13 +437,15 @@ function enviarCorreo(){
     }if(verificar){
         alert("Se va a descargar una copia de la boleta y se va a enviar otra copia de la boleta al correo!");
         envio.push(email.value);
-        cerrarPopup3();
         generarBoleta();
+        cerrarPopup3();
+        console.log(envio);
         }
 }
 function cerrarPopup3(){
     var popup = document.getElementById("popup__3");
     popup.style.display="none";
+    envio.splice(0, envio.length);
 }
 cargar(carro);
 
